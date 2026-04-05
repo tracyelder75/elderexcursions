@@ -5,17 +5,14 @@ import irelandImg from "@/assets/ireland.jpg";
 const trips = [
   {
     year: "2027",
-    title: "Southern England & Wales",
+    title: "England & Wales",
     status: "Now Forming",
     image: englandWalesImg,
     highlights: [
-      "Bath & the Roman Baths",
-      "Windsor Castle & Stonehenge",
-      "Highclere Castle (Downton Abbey)",
-      "Blenheim Palace",
-      "Cornwall—Penzance, St. Michael's Mount, Eden Project",
-      "Stratford-upon-Avon & the Royal Shakespeare Theatre",
-      "Cardiff, Swansea & Pembroke in Wales",
+      "Iconic castles, palaces & historic sites",
+      "Charming villages & stunning countryside",
+      "Cultural excursions with local depth",
+      "Coastal Cornwall & the Welsh landscape",
     ],
   },
   {

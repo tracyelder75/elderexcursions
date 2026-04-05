@@ -26,11 +26,11 @@ const ContactSection = () => {
             </p>
             <div className="space-y-4">
               <a
-                href="mailto:elderexcursions@gmail.com"
+                href="mailto:tracyelder75@gmail.com"
                 className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
               >
                 <Mail size={18} className="text-accent" />
-                <span className="text-sm">elderexcursions@gmail.com</span>
+                <span className="text-sm">tracyelder75@gmail.com</span>
               </a>
               <a
                 href="tel:706-207-2885"
