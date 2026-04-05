@@ -10,7 +10,6 @@ const Footer = () => {
           <a href="mailto:tracyelder75@gmail.com" className="hover:text-primary-foreground transition-colors">
             tracyelder75@gmail.com
           </a>
-          </a>
           <span className="hidden sm:inline text-primary-foreground/40">|</span>
           <a href="tel:706-207-2885" className="hover:text-primary-foreground transition-colors">
             706-207-2885
