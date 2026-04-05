@@ -53,10 +53,15 @@ const ContactSection = () => {
               </div>
             ) : (
               <form
-                onSubmit={handleSubmit}
-                className="space-y-5 bg-background rounded-lg p-8"
-                style={{ boxShadow: "var(--shadow-card)" }}
-              >
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  onSubmit={handleSubmit}
+  className="space-y-5 bg-background rounded-lg p-8"
+  style={{ boxShadow: "var(--shadow-card)" }}
+>
+  <input type="hidden" name="form-name" value="contact" />
+
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-1.5">
                     Full Name
