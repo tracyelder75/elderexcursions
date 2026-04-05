@@ -6,7 +6,14 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    const form = e.currentTarget;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form) as any).toString(),
+    })
+      .then(() => setSubmitted(true))
+      .catch((error) => alert(error));
   };
 
   return (
@@ -53,21 +60,21 @@ const ContactSection = () => {
               </div>
             ) : (
               <form
-  name="contact"
-  method="POST"
-  data-netlify="true"
-  onSubmit={handleSubmit}
-  className="space-y-5 bg-background rounded-lg p-8"
-  style={{ boxShadow: "var(--shadow-card)" }}
->
-  <input type="hidden" name="form-name" value="contact" />
-
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                onSubmit={handleSubmit}
+                className="space-y-5 bg-background rounded-lg p-8"
+                style={{ boxShadow: "var(--shadow-card)" }}
+              >
+                <input type="hidden" name="form-name" value="contact" />
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-1.5">
                     Full Name
                   </label>
                   <input
                     type="text"
+                    name="name"
                     required
                     className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
                     placeholder="Your name"
@@ -79,6 +86,7 @@ const ContactSection = () => {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
                     className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
                     placeholder="you@email.com"
@@ -90,6 +98,7 @@ const ContactSection = () => {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
                     className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
                     placeholder="Your phone number"
                   />
@@ -99,6 +108,7 @@ const ContactSection = () => {
                     Which journey interests you?
                   </label>
                   <select
+                    name="journey"
                     className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
                   >
                     <option value="">Select a journey</option>
@@ -113,6 +123,7 @@ const ContactSection = () => {
                     Message (optional)
                   </label>
                   <textarea
+                    name="message"
                     rows={3}
                     className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
                     placeholder="Any questions or special interests?"
