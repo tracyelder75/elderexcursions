@@ -1,19 +1,47 @@
 import { useState } from "react";
-import { Mail } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
+import { Mail, Loader2 } from "lucide-react";
+
+const schema = z.object({
+  name: z.string().min(2, "Please enter your full name"),
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().optional(),
+  journey: z.string().optional(),
+  message: z.string().optional(),
+});
+
+type FormValues = z.infer<typeof schema>;
 
 const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(new FormData(form) as any).toString(),
-    })
-      .then(() => setSubmitted(true))
-      .catch((error) => alert(error));
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<FormValues>({ resolver: zodResolver(schema) });
+
+  const onSubmit = async (data: FormValues) => {
+    try {
+      const body = new URLSearchParams({
+        "form-name": "contact",
+        ...Object.fromEntries(
+          Object.entries(data).filter(([, v]) => v !== undefined && v !== "")
+        ),
+      });
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      if (!res.ok) throw new Error("Submission failed");
+      setSubmitted(true);
+    } catch {
+      toast.error("Something went wrong. Please try emailing us directly.");
+    }
   };
 
   return (
@@ -56,7 +84,7 @@ const ContactSection = () => {
                 name="contact"
                 method="POST"
                 data-netlify="true"
-                onSubmit={handleSubmit}
+                onSubmit={handleSubmit(onSubmit)}
                 className="space-y-5 bg-background rounded-lg p-8"
                 style={{ boxShadow: "var(--shadow-card)" }}
               >
@@ -67,11 +95,13 @@ const ContactSection = () => {
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    required
-                    className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                    {...register("name")}
+                    className={`w-full px-4 py-2.5 rounded-md border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring ${errors.name ? "border-destructive" : "border-border"}`}
                     placeholder="Your name"
                   />
+                  {errors.name && (
+                    <p className="mt-1 text-xs text-destructive">{errors.name.message}</p>
+                  )}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-1.5">
@@ -79,11 +109,13 @@ const ContactSection = () => {
                   </label>
                   <input
                     type="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                    {...register("email")}
+                    className={`w-full px-4 py-2.5 rounded-md border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring ${errors.email ? "border-destructive" : "border-border"}`}
                     placeholder="you@email.com"
                   />
+                  {errors.email && (
+                    <p className="mt-1 text-xs text-destructive">{errors.email.message}</p>
+                  )}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-1.5">
@@ -91,7 +123,7 @@ const ContactSection = () => {
                   </label>
                   <input
                     type="tel"
-                    name="phone"
+                    {...register("phone")}
                     className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
                     placeholder="Your phone number"
                   />
@@ -101,11 +133,11 @@ const ContactSection = () => {
                     Which journey interests you?
                   </label>
                   <select
-                    name="journey"
+                    {...register("journey")}
                     className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
                   >
                     <option value="">Select a journey</option>
-                    <option>2027 – England & Wales</option>
+                    <option>2027 – England &amp; Wales</option>
                     <option>2028 – Scotland</option>
                     <option>2029 – Ireland</option>
                     <option>Washington D.C.</option>
@@ -119,7 +151,7 @@ const ContactSection = () => {
                     Message (optional)
                   </label>
                   <textarea
-                    name="message"
+                    {...register("message")}
                     rows={3}
                     className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
                     placeholder="Any questions or special interests?"
@@ -127,9 +159,11 @@ const ContactSection = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-primary text-primary-foreground py-3 rounded-md font-medium text-sm hover:opacity-90 transition-opacity"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary text-primary-foreground py-3 rounded-md font-medium text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send My Information
+                  {isSubmitting && <Loader2 size={16} className="animate-spin" />}
+                  {isSubmitting ? "Sending…" : "Send My Information"}
                 </button>
               </form>
             )}
