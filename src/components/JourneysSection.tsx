@@ -3,6 +3,7 @@ import scotlandImg from "@/assets/scotland.jpg";
 import irelandImg from "@/assets/ireland.jpg";
 import washingtonDcImg from "@/assets/washington-dc.jpg";
 import arkExperienceImg from "@/assets/ark-experience.jpg";
+import dollywoodImg from "@/assets/dollywood.jpg";
 
 const trips = [
   {
@@ -59,7 +60,7 @@ const domesticTrips = [
   },
   {
     title: "Dollywood",
-    image: "https://www.hearthsidecabinrentals.com/media/641080eac5ee8140ecbc1426/original.webp",
+    image: dollywoodImg,
     description:
       "Enjoy the charm of the Smoky Mountains with world-class entertainment, crafts, and Southern hospitality.",
   },
