@@ -15,13 +15,10 @@ const HeroSection = () => {
         style={{ background: "var(--hero-overlay)" }}
       />
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto animate-fade-up">
-        <p className="text-secondary text-sm tracking-[0.25em] uppercase mb-4 font-medium">
-          Elder Excursions
-        </p>
         <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-secondary leading-tight mb-6">
           Thoughtfully Designed Journeys for Curious Travelers
         </h1>
-        <p className="text-secondary/90 text-lg md:text-xl font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-secondary text-lg md:text-xl font-normal max-w-2xl mx-auto mb-10 leading-relaxed">
           Small-group journeys crafted with care, depth, and ease—balancing iconic
           destinations with meaningful, lesser-known experiences.
         </p>
