@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -33,18 +33,11 @@ const ContactSection = () => {
             </p>
             <div className="space-y-4">
               <a
-                href="mailto:tracyelder75@gmail.com"
+                href="mailto:elderexcursions@gmail.com"
                 className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
               >
                 <Mail size={18} className="text-accent" />
-                <span className="text-sm">tracyelder75@gmail.com</span>
-              </a>
-              <a
-                href="tel:706-207-2885"
-                className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
-              >
-                <Phone size={18} className="text-accent" />
-                <span className="text-sm">706-207-2885</span>
+                <span className="text-sm">elderexcursions@gmail.com</span>
               </a>
             </div>
           </div>
@@ -115,6 +108,9 @@ const ContactSection = () => {
                     <option>2027 – England & Wales</option>
                     <option>2028 – Scotland</option>
                     <option>2029 – Ireland</option>
+                    <option>Washington D.C.</option>
+                    <option>The Ark Experience</option>
+                    <option>Dollywood</option>
                     <option>Other / General Inquiry</option>
                   </select>
                 </div>

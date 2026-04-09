@@ -7,12 +7,8 @@ const Footer = () => {
           Thoughtfully Designed Journeys for Curious Travelers
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-primary-foreground/80 mb-6">
-          <a href="mailto:tracyelder75@gmail.com" className="hover:text-primary-foreground transition-colors">
-            tracyelder75@gmail.com
-          </a>
-          <span className="hidden sm:inline text-primary-foreground/40">|</span>
-          <a href="tel:706-207-2885" className="hover:text-primary-foreground transition-colors">
-            706-207-2885
+          <a href="mailto:elderexcursions@gmail.com" className="hover:text-primary-foreground transition-colors">
+            elderexcursions@gmail.com
           </a>
         </div>
         <p className="text-primary-foreground/50 text-xs">
