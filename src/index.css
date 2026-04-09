@@ -22,9 +22,9 @@
     --secondary-foreground: 160 25% 18%;
 
     --muted: 40 20% 92%;
-    --muted-foreground: 160 10% 45%;
+    --muted-foreground: 160 15% 28%;
 
-    --accent: 38 65% 55%;
+    --accent: 38 65% 40%;
     --accent-foreground: 160 25% 18%;
 
     --destructive: 0 84.2% 60.2%;
@@ -52,7 +52,7 @@
       hsla(160, 25%, 12%, 0.65) 100%
     );
 
-    --gradient-warm: linear-gradient(135deg, hsl(38, 65%, 55%), hsl(35, 70%, 65%));
+    --gradient-warm: linear-gradient(135deg, hsl(38, 65%, 40%), hsl(35, 70%, 50%));
     --shadow-soft: 0 4px 24px -4px hsla(160, 25%, 18%, 0.08);
     --shadow-card: 0 8px 32px -8px hsla(160, 25%, 18%, 0.1);
   }
