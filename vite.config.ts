@@ -5,6 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Allow CI to set a subdirectory base for PR preview deployments,
+  // e.g. VITE_BASE_PATH=/elderexcursions/pr-42/
+  base: process.env.VITE_BASE_PATH ?? "/",
   server: {
     host: "::",
     port: 8080,
