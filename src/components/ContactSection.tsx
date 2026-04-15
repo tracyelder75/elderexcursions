@@ -90,10 +90,11 @@ const ContactSection = () => {
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
                     Full Name
                   </label>
                   <input
+                    id="name"
                     type="text"
                     {...register("name")}
                     className={`w-full px-4 py-2.5 rounded-md border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring ${errors.name ? "border-destructive" : "border-border"}`}
@@ -104,10 +105,11 @@ const ContactSection = () => {
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
                     Email Address
                   </label>
                   <input
+                    id="email"
                     type="email"
                     {...register("email")}
                     className={`w-full px-4 py-2.5 rounded-md border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring ${errors.email ? "border-destructive" : "border-border"}`}
@@ -118,10 +120,11 @@ const ContactSection = () => {
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">
+                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1.5">
                     Phone (optional)
                   </label>
                   <input
+                    id="phone"
                     type="tel"
                     {...register("phone")}
                     className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
@@ -129,10 +132,11 @@ const ContactSection = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">
+                  <label htmlFor="journey" className="block text-sm font-medium text-foreground mb-1.5">
                     Which journey interests you?
                   </label>
                   <select
+                    id="journey"
                     {...register("journey")}
                     className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
                   >
@@ -147,10 +151,11 @@ const ContactSection = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">
                     Message (optional)
                   </label>
                   <textarea
+                    id="message"
                     {...register("message")}
                     rows={3}
                     className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
