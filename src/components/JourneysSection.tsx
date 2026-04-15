@@ -1,5 +1,5 @@
 import englandWalesImg from "@/assets/england-wales.jpg";
-import scotlandImg from "@/assets/scotland.jpg";
+import scotlandImg from "@/assets/IMG_0824.JPG";
 import irelandImg from "@/assets/ireland.jpg";
 import washingtonDcImg from "@/assets/washington-dc.jpg";
 import arkExperienceImg from "@/assets/ark-experience.jpg";
