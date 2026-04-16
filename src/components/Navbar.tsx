@@ -32,7 +32,7 @@ const Navbar = () => {
             to="/trips/england-wales"
             className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
           >
-            Trip Itineraries
+            Wales/England Trip
           </Link>
           <a
             href="#contact"
@@ -66,7 +66,7 @@ const Navbar = () => {
             onClick={() => setOpen(false)}
             className="text-sm font-medium text-muted-foreground hover:text-primary py-2"
           >
-            Trip Itineraries
+            Wales/England Trip
           </Link>
           <a
             href="#contact"

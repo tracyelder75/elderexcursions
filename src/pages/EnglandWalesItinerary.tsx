@@ -176,7 +176,7 @@ const hotels = [
     name: "Queen's Hotel",
     location: "Penzance, Cornwall",
     description: "An elegant Victorian hotel overlooking Mount's Bay with views of St. Michael's Mount.",
-    url: "https://www.thequeenshotel.com",
+    url: "https://www.queenshotelpenzance.co.uk",
   },
   {
     nights: "Nights 9–11",
@@ -249,23 +249,23 @@ const EnglandWalesItinerary = () => {
       </nav>
 
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <img src={heroImg} alt="Stonehenge" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
+      <section className="relative min-h-[70vh] flex flex-col justify-end overflow-hidden">
+        <img src={heroImg} alt="Stonehenge monument at dusk, hero image for the Cornwall, England and Wales 2027 itinerary" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
         <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
-          <p className="text-secondary/80 text-sm tracking-[0.25em] uppercase font-medium mb-3">Elder Excursions · 2027</p>
-          <h1 className="font-heading text-4xl md:text-6xl font-bold text-secondary leading-tight mb-4">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto w-full pb-16 pt-24">
+          <p className="text-white text-sm tracking-[0.25em] uppercase font-medium mb-3">Elder Excursions · 2027</p>
+          <h1 className="font-heading text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
             Cornwall, England & Wales
           </h1>
-          <p className="text-secondary/90 text-xl md:text-2xl font-light italic mb-6">
+          <p className="text-white text-xl md:text-2xl font-light italic mb-4">
             "Travel through time in Southern England and Wales"
           </p>
-          <p className="text-secondary/80 text-sm mb-8">July 21 – August 4, 2027 &nbsp;·&nbsp; 15 Days &nbsp;·&nbsp; 18–25 Participants</p>
+          <p className="text-white text-sm mb-8">July 21 – August 4, 2027 &nbsp;·&nbsp; 15 Days &nbsp;·&nbsp; 18–25 Participants</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#pricing" className="bg-accent text-accent-foreground px-8 py-3.5 rounded-md font-medium hover:opacity-90 transition-opacity">
               Reserve Your Spot
             </a>
-            <a href="#itinerary" className="border border-secondary/40 text-secondary px-8 py-3.5 rounded-md font-medium hover:bg-secondary/10 transition-colors">
+            <a href="#itinerary" className="border-2 border-white text-white px-8 py-3.5 rounded-md font-medium hover:bg-white/20 transition-colors">
               View Full Itinerary
             </a>
           </div>
@@ -284,7 +284,7 @@ const EnglandWalesItinerary = () => {
             ].map((s) => (
               <div key={s.label}>
                 <p className="text-2xl font-bold font-heading">{s.value}</p>
-                <p className="text-primary-foreground/70 text-sm mt-0.5">{s.label}</p>
+                <p className="text-primary-foreground/90 text-sm mt-0.5">{s.label}</p>
               </div>
             ))}
           </div>

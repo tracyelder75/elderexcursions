@@ -9,6 +9,7 @@ import dollywoodImg from "@/assets/dollywood.jpg";
 const trips = [
   {
     year: "2027",
+    dates: "July 21 – Aug 4, 2027",
     title: "England & Wales",
     status: "Now Forming",
     image: englandWalesImg,
@@ -99,14 +100,27 @@ const JourneysSection = () => {
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <div className="relative h-56 overflow-hidden">
-                <img
-                  src={trip.image}
-                  alt={`${trip.title} landscape`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  width={800}
-                  height={600}
-                />
+                {trip.itineraryPath ? (
+                  <Link to={trip.itineraryPath} className="block w-full h-full" aria-label={`View ${trip.title} itinerary`}>
+                    <img
+                      src={trip.image}
+                      alt={`${trip.title} destination`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      width={800}
+                      height={600}
+                    />
+                  </Link>
+                ) : (
+                  <img
+                    src={trip.image}
+                    alt={`${trip.title} destination`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                  />
+                )}
                 <span
                   className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold shadow-md ${statusColor[trip.status]}`}
                 >
@@ -114,9 +128,17 @@ const JourneysSection = () => {
                 </span>
               </div>
               <div className="p-6">
-                <p className="text-accent font-semibold text-sm mb-1">{trip.year}</p>
+                <p className="text-accent font-semibold text-sm mb-1">
+                  {trip.year}{trip.dates ? ` · ${trip.dates}` : ""}
+                </p>
                 <h3 className="font-heading text-2xl font-bold text-foreground mb-4">
-                  {trip.title}
+                  {trip.itineraryPath ? (
+                    <Link to={trip.itineraryPath} className="hover:text-primary transition-colors">
+                      {trip.title}
+                    </Link>
+                  ) : (
+                    trip.title
+                  )}
                 </h3>
                 <ul className="space-y-2">
                   {trip.highlights.map((h) => (
