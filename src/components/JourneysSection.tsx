@@ -1,4 +1,4 @@
-import englandWalesImg from "@/assets/england-wales.jpg";
+import englandWalesImg from "@/assets/stonehenge.jpg";
 import scotlandImg from "@/assets/IMG_0824.JPG";
 import irelandImg from "@/assets/ireland.jpg";
 import washingtonDcImg from "@/assets/washington-dc.jpg";
