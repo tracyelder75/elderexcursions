@@ -475,11 +475,8 @@ const EnglandWalesItinerary = () => {
             <h3 className="font-heading text-2xl font-bold mb-2">Reserve Your Spot</h3>
             <p className="text-primary-foreground/80 mb-6 max-w-lg mx-auto">Contact Tracy Elder directly to register or ask any questions. Space is limited to 25 participants.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:tracyelder75@gmail.com" className="flex items-center justify-center gap-2 bg-primary-foreground text-primary px-6 py-3 rounded-md font-semibold text-sm hover:opacity-90 transition-opacity">
-                tracyelder75@gmail.com
-              </a>
-              <a href="tel:+17062072885" className="flex items-center justify-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-md font-semibold text-sm hover:opacity-90 transition-opacity">
-                706-207-2885
+              <a href="mailto:elderexcursions@gmail.com" className="flex items-center justify-center gap-2 bg-primary-foreground text-primary px-6 py-3 rounded-md font-semibold text-sm hover:opacity-90 transition-opacity">
+                elderexcursions@gmail.com
               </a>
             </div>
           </div>
