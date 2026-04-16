@@ -123,7 +123,7 @@ const JourneysSection = () => {
                   ))}
                 </ul>
                 <a
-                  href="#contact"
+                  href={trip.title === "Scotland" ? "/itineraries/scotland" : "/#contact"}
                   className="inline-block mt-6 text-primary font-medium text-sm hover:underline"
                 >
                   Learn more →

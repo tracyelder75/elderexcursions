@@ -5,10 +5,11 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { label: "About", href: "#about" },
-    { label: "Journeys", href: "#journeys" },
-    { label: "What's Included", href: "#included" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "/#about" },
+    { label: "Journeys", href: "/#journeys" },
+    { label: "What's Included", href: "/#included" },
+    { label: "Trip Itineraries", href: "/itineraries/scotland" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -28,7 +29,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-opacity"
           >
             Request Info
@@ -55,7 +56,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setOpen(false)}
             className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-medium text-center"
           >
