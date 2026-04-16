@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
@@ -27,6 +28,12 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
+          <Link
+            to="/trips/england-wales"
+            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+          >
+            Trip Itineraries
+          </Link>
           <a
             href="#contact"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-opacity"
@@ -54,6 +61,13 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
+          <Link
+            to="/trips/england-wales"
+            onClick={() => setOpen(false)}
+            className="text-sm font-medium text-muted-foreground hover:text-primary py-2"
+          >
+            Trip Itineraries
+          </Link>
           <a
             href="#contact"
             onClick={() => setOpen(false)}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import englandWalesImg from "@/assets/stonehenge.jpg";
 import scotlandImg from "@/assets/IMG_0824.JPG";
 import irelandImg from "@/assets/ireland.jpg";
@@ -11,6 +12,7 @@ const trips = [
     title: "England & Wales",
     status: "Now Forming",
     image: englandWalesImg,
+    itineraryPath: "/trips/england-wales",
     highlights: [
       "Iconic castles, palaces & historic sites",
       "Charming villages & stunning countryside",
@@ -23,6 +25,7 @@ const trips = [
     title: "Scotland",
     status: "Preview Coming Soon",
     image: scotlandImg,
+    itineraryPath: null,
     highlights: [
       "Edinburgh's Royal Mile & castle",
       "Scottish Highlands & lochs",
@@ -36,6 +39,7 @@ const trips = [
     title: "Ireland",
     status: "Future Journey",
     image: irelandImg,
+    itineraryPath: null,
     highlights: [
       "Dublin's pubs, museums, and city buzz",
       "Killarney's castles, national park, and coastal drives",
@@ -122,12 +126,21 @@ const JourneysSection = () => {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#contact"
-                  className="inline-block mt-6 text-primary font-medium text-sm hover:underline"
-                >
-                  Learn more →
-                </a>
+                {trip.itineraryPath ? (
+                  <Link
+                    to={trip.itineraryPath}
+                    className="inline-block mt-6 text-primary font-medium text-sm hover:underline"
+                  >
+                    Learn more →
+                  </Link>
+                ) : (
+                  <a
+                    href="#contact"
+                    className="inline-block mt-6 text-primary font-medium text-sm hover:underline"
+                  >
+                    Learn more →
+                  </a>
+                )}
               </div>
             </div>
           ))}
