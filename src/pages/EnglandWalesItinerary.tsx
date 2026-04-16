@@ -168,7 +168,7 @@ const hotels = [
     name: "Clayton Hotel Cardiff",
     location: "Cardiff, Wales",
     description: "Contemporary hotel in the heart of Cardiff city centre, steps from Cardiff Castle.",
-    url: "https://www.claytonhotelcardiff.com",
+    url: "https://www.claytonhotels.com/cardiff/",
   },
   {
     nights: "Nights 5–8",
@@ -176,7 +176,7 @@ const hotels = [
     name: "Queen's Hotel",
     location: "Penzance, Cornwall",
     description: "An elegant Victorian hotel overlooking Mount's Bay with views of St. Michael's Mount.",
-    url: "https://www.queenshotelpenzance.co.uk",
+    url: "https://www.queens-hotel.com/",
   },
   {
     nights: "Nights 9–11",
@@ -184,7 +184,7 @@ const hotels = [
     name: "Hampton by Hilton",
     location: "Bath, England",
     description: "Modern hotel in the UNESCO World Heritage city of Bath, close to the Roman Baths.",
-    url: "https://www.hilton.com",
+    url: "https://www.hilton.com/en/hotels/batumhx-hampton-bath-city/?SEO_id=GMB-EMEA-HX-BATUMHX",
   },
   {
     nights: "Nights 12–13",
@@ -192,7 +192,7 @@ const hotels = [
     name: "Courtyard by Marriott",
     location: "London Heathrow",
     description: "Comfortable airport hotel for the final nights before your homeward departure.",
-    url: "https://www.marriott.com",
+    url: "https://www.marriott.com/en-us/hotels/lhrcy-courtyard-london-heathrow-airport/overview/?cid=NAT_google_hotel_url",
   },
 ];
 
