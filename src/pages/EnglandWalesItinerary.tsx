@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronUp, MapPin, CheckCircle, XCircle } from "lucide-react";
 import Footer from "@/components/Footer";
@@ -214,6 +215,42 @@ const EnglandWalesItinerary = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Cornwall, England & Wales 2027 Itinerary – Elder Excursions</title>
+        <meta name="description" content="Full 15-day itinerary for the Cornwall, England & Wales 2027 small-group journey. July 21–August 4, 2027. Includes Cardiff Castle, Tintagel, Stonehenge, Highclere Castle, Roman Baths, Windsor Castle and more." />
+        <meta property="og:url" content="https://elderexcursions.com/trips/england-wales" />
+        <meta property="og:title" content="Cornwall, England & Wales 2027 – Elder Excursions Trip Itinerary" />
+        <meta property="og:description" content="15-day small-group journey through Cornwall, England and Wales. July 21–August 4, 2027. From $4,395/person. Visit Stonehenge, Tintagel, Highclere Castle, Windsor Castle and more." />
+        <meta property="og:image" content="https://elderexcursions.com/og-image-england-wales.jpg" />
+        <link rel="canonical" href="https://elderexcursions.com/trips/england-wales" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TouristTrip",
+          "name": "Cornwall, England & Wales 2027",
+          "description": "15-day small-group history-themed journey through Cornwall, England and Wales.",
+          "startDate": "2027-07-21",
+          "endDate": "2027-08-04",
+          "offers": {
+            "@type": "Offer",
+            "price": "4395",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/LimitedAvailability",
+            "validThrough": "2026-12-01"
+          },
+          "organizer": {
+            "@type": "TravelAgency",
+            "name": "Elder Excursions, LLC",
+            "url": "https://elderexcursions.com",
+            "email": "elderexcursions@gmail.com"
+          },
+          "touristType": "History enthusiasts, small-group travelers",
+          "itinerary": {
+            "@type": "ItemList",
+            "name": "15-Day Itinerary",
+            "numberOfItems": 15
+          }
+        })}</script>
+      </Helmet>
       {/* Sticky nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
         <div className="container mx-auto flex items-center justify-between py-4 px-4">
