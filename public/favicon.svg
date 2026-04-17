@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background: site primary dark forest green -->
+  <rect width="100" height="100" rx="14" fill="#2a5248"/>
+
+  <!-- Standing stone silhouettes (faded lighter green) -->
+  <!-- Left stone -->
+  <polygon points="14,82 16,44 24,42 26,82" fill="#7ab8a4" opacity="0.35"/>
+  <!-- Center stone (tallest) -->
+  <polygon points="43,82 45,16 56,14 58,82" fill="#7ab8a4" opacity="0.35"/>
+  <!-- Right stone -->
+  <polygon points="69,82 71,34 79,32 81,82" fill="#7ab8a4" opacity="0.35"/>
+
+  <!-- EE monogram: site accent warm amber -->
+  <text x="50" y="70"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="42"
+    font-weight="bold"
+    fill="#d4893a"
+    text-anchor="middle">EE</text>
+</svg>
