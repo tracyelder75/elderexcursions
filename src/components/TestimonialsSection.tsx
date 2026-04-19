@@ -1,15 +1,5 @@
 const testimonials = [
   {
-    quote: "I can only imagine the hours of work you put into choosing destinations, arranging hotels, guides, and meal plans. You created unique experiences that we will treasure for years to come.",
-    name: "Donna",
-    trip: "Wales & England 2023",
-  },
-  {
-    quote: "I saw more in less time than I ever thought possible and fulfilled longtime dreams of seeing castles, cathedrals, and historic sites — not to mention the great dining, new friends, and your amazing ability to handle scheduling challenges.",
-    name: "John",
-    trip: "Wales & England 2023",
-  },
-  {
     quote: "Every detail and activity so carefully planned and curated. Thank you for the tremendous work that you did to make it memorable and special. What a wonderful resource and guide you are.",
     name: "Andrea",
     trip: "Scotland 2025",
