@@ -457,8 +457,27 @@ const EnglandWalesItinerary = () => {
         </div>
       </section>
 
+      {/* Traveler quotes */}
+      <section className="py-16 bg-card">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-10 text-center">From Past Travelers</p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { quote: "I can only imagine the hours of work you put into choosing destinations, arranging hotels, guides, and meal plans. You created unique experiences that we will treasure for years to come.", name: "Donna", trip: "Wales & England 2023" },
+              { quote: "I saw more in less time than I ever thought possible and fulfilled longtime dreams of seeing castles, cathedrals, and historic sites — not to mention the great dining, new friends, and your amazing ability to handle scheduling challenges.", name: "John", trip: "Wales & England 2023" },
+            ].map((t) => (
+              <div key={t.name} className="bg-background rounded-lg p-7 border border-border" style={{ boxShadow: "var(--shadow-soft)" }}>
+                <blockquote className="text-muted-foreground text-sm leading-relaxed italic mb-4">"{t.quote}"</blockquote>
+                <p className="text-foreground text-sm font-semibold">— {t.name}</p>
+                <p className="text-accent text-xs font-medium tracking-wide uppercase mt-1">{t.trip}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Pricing */}
-      <section id="pricing" className="py-20 bg-card">
+      <section id="pricing" className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">Ready to Join Us?</p>
