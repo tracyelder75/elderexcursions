@@ -1,37 +1,37 @@
 const testimonials = [
   {
-    quote: "Thank you, Tracy, for your dedication and commitment to this trip and for making this special travel experience happen. I can only imagine the hours of work you put into choosing destinations, arranging hotels, guides, meal plans. You even helped with our preparation during packing and helped us as we tried to understand the history of each place. Each of us has been blessed by your efforts and expertise as we traveled to these amazing places and you created unique experiences that we can continually treasure for years to come.",
-    name: "Donna Clendenning",
+    quote: "I can only imagine the hours of work you put into choosing destinations, arranging hotels, guides, and meal plans. You created unique experiences that we will treasure for years to come.",
+    name: "Donna",
     trip: "Wales & England 2023",
   },
   {
-    quote: "I had a great trip, saw more in less time than I ever thought possible, and fulfilled a number of longtime dreams of seeing the homeland and many of the castles, cathedrals, and other sites I had read about in school, but had long forgotten. Not to mention the great dining, drinking, and new friends, and your amazing ability to respond to scheduling challenges.",
-    name: "John Joerschke",
+    quote: "I saw more in less time than I ever thought possible and fulfilled longtime dreams of seeing castles, cathedrals, and historic sites — not to mention the great dining, new friends, and your amazing ability to handle scheduling challenges.",
+    name: "John",
     trip: "Wales & England 2023",
   },
   {
-    quote: "Every detail and activity so carefully planned and curated. Thank you for the tremendous work that you did to make it memorable and special for this group. What a wonderful resource and guide you are.",
-    name: "Andrea Pearson",
+    quote: "Every detail and activity so carefully planned and curated. Thank you for the tremendous work that you did to make it memorable and special. What a wonderful resource and guide you are.",
+    name: "Andrea",
     trip: "Scotland 2025",
   },
   {
     quote: "Your attention to every detail was outstanding! I'm so glad I could go and experience it! Thank you for all your time and energy!",
-    name: "Kathy Little",
+    name: "Kathy",
     trip: "Scotland 2025",
   },
   {
-    quote: "What a great way to travel! All arrangements made expertly by somebody who knows and loves the country we're visiting! I can't imagine how much time it took you to plan and book hotels, meals, excursions, boat rides, buses, play tickets, etc.",
-    name: "Rosemary Belger",
+    quote: "What a great way to travel! All arrangements made expertly by somebody who knows and loves the country. I can't imagine how much time it took to plan and book hotels, meals, excursions, and more.",
+    name: "Rosemary",
     trip: "Scotland 2025",
   },
   {
     quote: "Amazing trip because you show so much care and organization.",
-    name: "Beth & Bucky Scarborough",
+    name: "Beth & Bucky",
     trip: "Scotland 2018",
   },
   {
     quote: "Will go down as one of my favorite trips! Really enjoyed the camaraderie. Thanks for your amazing efforts to keep us all pleased. Loved it!",
-    name: "Shirley Baker",
+    name: "Shirley",
     trip: "Scotland 2018",
   },
   {
