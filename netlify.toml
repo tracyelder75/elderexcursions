@@ -5,6 +5,13 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Redirect www to non-www (must come before the SPA catch-all)
+[[redirects]]
+  from = "https://www.elderexcursions.com/*"
+  to = "https://elderexcursions.com/:splat"
+  status = 301
+  force = true
+
 # SPA fallback — send all routes to index.html so React Router handles them
 [[redirects]]
   from = "/*"
