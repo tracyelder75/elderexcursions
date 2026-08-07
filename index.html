@@ -13,7 +13,10 @@
     <meta name="keywords" content="small group travel, England tours, Wales tours, Scotland tours, Ireland tours, British Isles travel, senior travel, history tours, Elder Excursions" />
     <meta name="author" content="Elder Excursions, LLC" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://elderexcursions.com/" />
+    <!-- No canonical here: each route sets its own via react-helmet-async.
+         A hardcoded one would survive into every route's HTML and give pages
+         like /trips/england-wales two conflicting canonicals, which Google
+         resolves by ignoring both. -->
 
     <!-- Open Graph (Facebook, LinkedIn, iMessage previews) -->
     <meta property="og:type" content="website" />
