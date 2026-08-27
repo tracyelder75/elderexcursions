@@ -7,8 +7,8 @@ const Footer = () => {
           Thoughtfully Designed Journeys for Curious Travelers
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-base text-primary-foreground mb-6">
-          <a href="mailto:elderexcursions@gmail.com" className="hover:opacity-80 transition-opacity">
-            elderexcursions@gmail.com
+          <a href="mailto:tracyelder75@gmail.com" className="hover:opacity-80 transition-opacity">
+            tracyelder75@gmail.com
           </a>
         </div>
         <p className="text-primary-foreground/80 text-sm">
