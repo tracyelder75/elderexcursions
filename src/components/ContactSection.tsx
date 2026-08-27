@@ -61,11 +61,11 @@ const ContactSection = () => {
             </p>
             <div className="space-y-4">
               <a
-                href="mailto:elderexcursions@gmail.com"
+                href="mailto:tracyelder75@gmail.com"
                 className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
               >
                 <Mail size={20} className="text-accent" aria-hidden="true" />
-                <span className="text-base">elderexcursions@gmail.com</span>
+                <span className="text-base">tracyelder75@gmail.com</span>
               </a>
             </div>
           </div>
