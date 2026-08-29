@@ -23,10 +23,11 @@ const trips = [
   },
   {
     year: "2028",
+    dates: "Summer 2028",
     title: "Scotland",
     status: "Preview Coming Soon",
     image: scotlandImg,
-    itineraryPath: null,
+    itineraryPath: "/trips/scotland",
     highlights: [
       "Edinburgh's Royal Mile & castle",
       "Scottish Highlands & lochs",

@@ -34,6 +34,12 @@ const Navbar = () => {
           >
             Wales/England Trip
           </Link>
+          <Link
+            to="/trips/scotland"
+            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+          >
+            Scotland Trip
+          </Link>
           <a
             href="#contact"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-opacity"
@@ -67,6 +73,13 @@ const Navbar = () => {
             className="text-sm font-medium text-muted-foreground hover:text-primary py-2"
           >
             Wales/England Trip
+          </Link>
+          <Link
+            to="/trips/scotland"
+            onClick={() => setOpen(false)}
+            className="text-sm font-medium text-muted-foreground hover:text-primary py-2"
+          >
+            Scotland Trip
           </Link>
           <a
             href="#contact"
