@@ -306,7 +306,7 @@ const EnglandWalesItinerary = () => {
               View Full Itinerary
             </a>
             <a
-              href="/Cornwall_Wales_England_Brochure_2027.pdf"
+              href="/Cornwall%20Wales%20England%20Brochure%202027.pdf"
               download
               className="flex items-center justify-center gap-2 border-2 border-white/70 text-white px-8 py-3.5 rounded-md font-medium hover:bg-white/20 transition-colors"
             >
@@ -524,7 +524,7 @@ const EnglandWalesItinerary = () => {
                 tracyelder75@gmail.com
               </a>
               <a
-                href="/Cornwall_Wales_England_Brochure_2027.pdf"
+                href="/Cornwall%20Wales%20England%20Brochure%202027.pdf"
                 download
                 className="flex items-center justify-center gap-2 border-2 border-primary-foreground/70 text-primary-foreground px-6 py-3 rounded-md font-semibold text-sm hover:bg-primary-foreground/10 transition-colors"
               >
