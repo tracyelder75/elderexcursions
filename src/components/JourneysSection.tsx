@@ -1,5 +1,6 @@
-import englandWalesImg from "@/assets/england-wales.jpg";
-import scotlandImg from "@/assets/scotland.jpg";
+import { Link } from "react-router-dom";
+import englandWalesImg from "@/assets/stonehenge.jpg";
+import scotlandImg from "@/assets/IMG_0824.JPG";
 import irelandImg from "@/assets/ireland.jpg";
 import washingtonDcImg from "@/assets/washington-dc.jpg";
 import arkExperienceImg from "@/assets/ark-experience.jpg";
@@ -8,9 +9,11 @@ import dollywoodImg from "@/assets/dollywood.jpg";
 const trips = [
   {
     year: "2027",
+    dates: "July 21 – Aug 4, 2027",
     title: "England & Wales",
     status: "Now Forming",
     image: englandWalesImg,
+    itineraryPath: "/trips/england-wales",
     highlights: [
       "Iconic castles, palaces & historic sites",
       "Charming villages & stunning countryside",
@@ -23,6 +26,7 @@ const trips = [
     title: "Scotland",
     status: "Preview Coming Soon",
     image: scotlandImg,
+    itineraryPath: null,
     highlights: [
       "Edinburgh's Royal Mile & castle",
       "Scottish Highlands & lochs",
@@ -36,6 +40,7 @@ const trips = [
     title: "Ireland",
     status: "Future Journey",
     image: irelandImg,
+    itineraryPath: null,
     highlights: [
       "Dublin's pubs, museums, and city buzz",
       "Killarney's castles, national park, and coastal drives",
@@ -95,14 +100,27 @@ const JourneysSection = () => {
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <div className="relative h-56 overflow-hidden">
-                <img
-                  src={trip.image}
-                  alt={`${trip.title} landscape`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  width={800}
-                  height={600}
-                />
+                {trip.itineraryPath ? (
+                  <Link to={trip.itineraryPath} className="block w-full h-full" aria-label={`View ${trip.title} itinerary`}>
+                    <img
+                      src={trip.image}
+                      alt={`${trip.title} destination`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      width={800}
+                      height={600}
+                    />
+                  </Link>
+                ) : (
+                  <img
+                    src={trip.image}
+                    alt={`${trip.title} destination`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                  />
+                )}
                 <span
                   className={`absolute top-4 right-4 px-3 py-1.5 rounded-full text-sm font-semibold shadow-md ${statusColor[trip.status]}`}
                 >
@@ -110,9 +128,17 @@ const JourneysSection = () => {
                 </span>
               </div>
               <div className="p-6">
-                <p className="text-accent font-semibold text-base mb-1">{trip.year}</p>
+                <p className="text-accent font-semibold text-base mb-1">
+                  {trip.year}{trip.dates ? ` · ${trip.dates}` : ""}
+                </p>
                 <h3 className="font-heading text-2xl font-bold text-foreground mb-4">
-                  {trip.title}
+                  {trip.itineraryPath ? (
+                    <Link to={trip.itineraryPath} className="hover:text-primary transition-colors">
+                      {trip.title}
+                    </Link>
+                  ) : (
+                    trip.title
+                  )}
                 </h3>
                 <ul className="space-y-2">
                   {trip.highlights.map((h) => (
@@ -122,13 +148,23 @@ const JourneysSection = () => {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#contact"
-                  className="inline-block mt-6 text-primary font-medium text-base hover:underline"
-                  aria-label={`Learn more about ${trip.title}`}
-                >
-                  Learn more
-                </a>
+                {trip.itineraryPath ? (
+                  <Link
+                    to={trip.itineraryPath}
+                    className="inline-block mt-6 text-primary font-medium text-base hover:underline"
+                    aria-label={`Learn more about ${trip.title}`}
+                  >
+                    Learn more
+                  </Link>
+                ) : (
+                  <a
+                    href="#contact"
+                    className="inline-block mt-6 text-primary font-medium text-base hover:underline"
+                    aria-label={`Learn more about ${trip.title}`}
+                  >
+                    Learn more
+                  </a>
+                )}
               </div>
             </div>
           ))}

@@ -32,17 +32,58 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-accent text-base tracking-[0.2em] uppercase font-medium mb-3">
-            A Different Way to Travel
+
+        {/* Bio */}
+        <div className="max-w-3xl mx-auto mb-20">
+          <p className="text-accent text-base tracking-[0.2em] uppercase font-medium mb-3 text-center">
+            About Elder Excursions
           </p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Travel with Purpose & Joy
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
+            Travel Thoughtfully. Travel Well.
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Elder Excursions offers journeys designed for travelers who want more
-            than a checklist—who seek connection, comfort, and unforgettable moments.
+
+          <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
+            <p>
+              Elder Excursions was founded on a simple belief: that curious, experienced travelers
+              deserve journeys as thoughtfully planned as they are memorable.
+            </p>
+            <p>
+              Tracy Elder brings over a decade of expertise in international travel planning, having
+              spent ten years at the University of Georgia managing study abroad programs that took
+              students across the globe. In 2016, she was approached by UGA's Osher Lifelong
+              Learning Institute (OLLI) to design a travel experience for their members — and Elder
+              Excursions, LLC was born.
+            </p>
+            <p>
+              Since then, Tracy has led small groups on immersive journeys through Scotland, Wales,
+              and England, building a reputation for meticulous planning, seamless logistics, and
+              the kind of personal attention that turns a trip into a true experience. Whether
+              organizing a journey for twenty friends or a small group of first-time international
+              travelers, she brings the same professionalism and passion to every itinerary.
+            </p>
+            <p>
+              Following her retirement from UGA in 2021, Tracy has returned to her passion for
+              travel with renewed purpose. Now rooted in an active 55+ community, she understands
+              firsthand what today's travelers are looking for — adventure without the headaches,
+              discovery without the stress. Elder Excursions is back and better than ever, with an
+              upcoming Wales and England journey already in the works.
+            </p>
+          </div>
+
+          {/* Tagline pull quote */}
+          <blockquote className="mt-10 border-l-4 border-primary pl-6 text-foreground font-heading text-xl md:text-2xl italic font-medium">
+            Because the best travel is still ahead of you.
+          </blockquote>
+        </div>
+
+        {/* Feature cards */}
+        <div className="text-center mb-10">
+          <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-2">
+            What We Offer
           </p>
+          <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
+            A Different Way to Travel
+          </h3>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {features.map((f) => (
@@ -54,13 +95,14 @@ const AboutSection = () => {
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary mb-5" aria-hidden="true">
                 <f.icon size={26} />
               </div>
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-2">
+              <h4 className="font-heading text-xl font-semibold text-foreground mb-2">
                 {f.title}
-              </h3>
+              </h4>
               <p className="text-muted-foreground text-base leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
