@@ -35,7 +35,7 @@ const AboutSection = () => {
 
         {/* Bio */}
         <div className="max-w-3xl mx-auto mb-20">
-          <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3 text-center">
+          <p className="text-accent text-base tracking-[0.2em] uppercase font-medium mb-3 text-center">
             About Elder Excursions
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
@@ -50,7 +50,7 @@ const AboutSection = () => {
             <p>
               Tracy Elder brings over a decade of expertise in international travel planning, having
               spent ten years at the University of Georgia managing study abroad programs that took
-              students across the globe. In 2016, she was approached by UGA's Osher Lifelong
+              students across the globe. In 2016, she was approached by UGA’s Osher Lifelong
               Learning Institute (OLLI) to design a travel experience for their members — and Elder
               Excursions, LLC was born.
             </p>
@@ -64,7 +64,7 @@ const AboutSection = () => {
             <p>
               Following her retirement from UGA in 2021, Tracy has returned to her passion for
               travel with renewed purpose. Now rooted in an active 55+ community, she understands
-              firsthand what today's travelers are looking for — adventure without the headaches,
+              firsthand what today’s travelers are looking for — adventure without the headaches,
               discovery without the stress. Elder Excursions is back and better than ever, with an
               upcoming Wales and England journey already in the works.
             </p>
@@ -92,13 +92,13 @@ const AboutSection = () => {
               className="bg-card rounded-lg p-8 text-center"
               style={{ boxShadow: "var(--shadow-soft)" }}
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary mb-5">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary mb-5" aria-hidden="true">
                 <f.icon size={26} />
               </div>
               <h4 className="font-heading text-xl font-semibold text-foreground mb-2">
                 {f.title}
               </h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>
+              <p className="text-muted-foreground text-base leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>

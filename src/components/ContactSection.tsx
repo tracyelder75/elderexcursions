@@ -49,7 +49,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">
+            <p className="text-accent text-base tracking-[0.2em] uppercase font-medium mb-3">
               Get in Touch
             </p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -61,11 +61,11 @@ const ContactSection = () => {
             </p>
             <div className="space-y-4">
               <a
-                href="mailto:elderexcursions@gmail.com"
+                href="mailto:tracyelder75@gmail.com"
                 className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
               >
-                <Mail size={18} className="text-accent" />
-                <span className="text-sm">elderexcursions@gmail.com</span>
+                <Mail size={20} className="text-accent" aria-hidden="true" />
+                <span className="text-base">tracyelder75@gmail.com</span>
               </a>
             </div>
           </div>
@@ -90,51 +90,62 @@ const ContactSection = () => {
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">
+                  <label htmlFor="contact-name" className="block text-base font-medium text-foreground mb-1.5">
                     Full Name
                   </label>
                   <input
+                    id="contact-name"
                     type="text"
                     {...register("name")}
-                    className={`w-full px-4 py-2.5 rounded-md border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring ${errors.name ? "border-destructive" : "border-border"}`}
+                    aria-describedby={errors.name ? "contact-name-error" : undefined}
+                    aria-invalid={!!errors.name}
+                    autocomplete="name"
+                    className={`w-full px-4 py-2.5 rounded-md border bg-background text-foreground text-base focus:outline-none focus:ring-2 focus:ring-ring ${errors.name ? "border-destructive" : "border-border"}`}
                     placeholder="Your name"
                   />
                   {errors.name && (
-                    <p className="mt-1 text-xs text-destructive">{errors.name.message}</p>
+                    <p id="contact-name-error" className="mt-1 text-sm text-destructive">{errors.name.message}</p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">
+                  <label htmlFor="contact-email" className="block text-base font-medium text-foreground mb-1.5">
                     Email Address
                   </label>
                   <input
+                    id="contact-email"
                     type="email"
                     {...register("email")}
-                    className={`w-full px-4 py-2.5 rounded-md border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring ${errors.email ? "border-destructive" : "border-border"}`}
+                    aria-describedby={errors.email ? "contact-email-error" : undefined}
+                    aria-invalid={!!errors.email}
+                    autocomplete="email"
+                    className={`w-full px-4 py-2.5 rounded-md border bg-background text-foreground text-base focus:outline-none focus:ring-2 focus:ring-ring ${errors.email ? "border-destructive" : "border-border"}`}
                     placeholder="you@email.com"
                   />
                   {errors.email && (
-                    <p className="mt-1 text-xs text-destructive">{errors.email.message}</p>
+                    <p id="contact-email-error" className="mt-1 text-sm text-destructive">{errors.email.message}</p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">
+                  <label htmlFor="contact-phone" className="block text-base font-medium text-foreground mb-1.5">
                     Phone (optional)
                   </label>
                   <input
+                    id="contact-phone"
                     type="tel"
                     {...register("phone")}
-                    className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                    autocomplete="tel"
+                    className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-base focus:outline-none focus:ring-2 focus:ring-ring"
                     placeholder="Your phone number"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">
+                  <label htmlFor="contact-journey" className="block text-base font-medium text-foreground mb-1.5">
                     Which journey interests you?
                   </label>
                   <select
+                    id="contact-journey"
                     {...register("journey")}
-                    className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                    className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-base focus:outline-none focus:ring-2 focus:ring-ring"
                   >
                     <option value="">Select a journey</option>
                     <option>2027 – England &amp; Wales</option>
@@ -147,22 +158,23 @@ const ContactSection = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">
+                  <label htmlFor="contact-message" className="block text-base font-medium text-foreground mb-1.5">
                     Message (optional)
                   </label>
                   <textarea
+                    id="contact-message"
                     {...register("message")}
-                    rows={3}
-                    className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+                    rows={4}
+                    className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-base focus:outline-none focus:ring-2 focus:ring-ring resize-none"
                     placeholder="Any questions or special interests?"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary text-primary-foreground py-3 rounded-md font-medium text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full bg-primary text-primary-foreground py-3.5 rounded-md font-medium text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting && <Loader2 size={16} className="animate-spin" />}
+                  {isSubmitting && <Loader2 size={18} className="animate-spin" aria-hidden="true" />}
                   {isSubmitting ? "Sending…" : "Send My Information"}
                 </button>
               </form>
