@@ -82,7 +82,7 @@ const JourneysSection = () => {
     <section id="journeys" className="py-24 bg-card">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">
+          <p className="text-accent text-base tracking-[0.2em] uppercase font-medium mb-3">
             Annual Signature Journeys
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -122,13 +122,13 @@ const JourneysSection = () => {
                   />
                 )}
                 <span
-                  className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold shadow-md ${statusColor[trip.status]}`}
+                  className={`absolute top-4 right-4 px-3 py-1.5 rounded-full text-sm font-semibold shadow-md ${statusColor[trip.status]}`}
                 >
                   {trip.status}
                 </span>
               </div>
               <div className="p-6">
-                <p className="text-accent font-semibold text-sm mb-1">
+                <p className="text-accent font-semibold text-base mb-1">
                   {trip.year}{trip.dates ? ` · ${trip.dates}` : ""}
                 </p>
                 <h3 className="font-heading text-2xl font-bold text-foreground mb-4">
@@ -142,8 +142,8 @@ const JourneysSection = () => {
                 </h3>
                 <ul className="space-y-2">
                   {trip.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className="text-accent mt-1">•</span>
+                    <li key={h} className="flex items-start gap-2 text-base text-muted-foreground">
+                      <span className="text-accent mt-1" aria-hidden="true">•</span>
                       {h}
                     </li>
                   ))}
@@ -151,16 +151,18 @@ const JourneysSection = () => {
                 {trip.itineraryPath ? (
                   <Link
                     to={trip.itineraryPath}
-                    className="inline-block mt-6 text-primary font-medium text-sm hover:underline"
+                    className="inline-block mt-6 text-primary font-medium text-base hover:underline"
+                    aria-label={`Learn more about ${trip.title}`}
                   >
-                    Learn more →
+                    Learn more
                   </Link>
                 ) : (
                   <a
                     href="#contact"
-                    className="inline-block mt-6 text-primary font-medium text-sm hover:underline"
+                    className="inline-block mt-6 text-primary font-medium text-base hover:underline"
+                    aria-label={`Learn more about ${trip.title}`}
                   >
-                    Learn more →
+                    Learn more
                   </a>
                 )}
               </div>
@@ -171,7 +173,7 @@ const JourneysSection = () => {
         {/* Domestic Trips */}
         <div className="mt-20">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">
+            <p className="text-accent text-base tracking-[0.2em] uppercase font-medium mb-3">
               Closer to Home
             </p>
             <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
@@ -197,7 +199,7 @@ const JourneysSection = () => {
                     width={800}
                     height={600}
                   />
-                  <span className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold shadow-md bg-foreground/80 text-background">
+                  <span className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-sm font-semibold shadow-md bg-foreground/80 text-background">
                     Coming Soon
                   </span>
                 </div>
@@ -205,14 +207,15 @@ const JourneysSection = () => {
                   <h3 className="font-heading text-xl font-bold text-foreground mb-2">
                     {trip.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-base leading-relaxed">
                     {trip.description}
                   </p>
                   <a
                     href="#contact"
-                    className="inline-block mt-4 text-primary font-medium text-sm hover:underline"
+                    className="inline-block mt-4 text-primary font-medium text-base hover:underline"
+                    aria-label={`I'm interested in ${trip.title}`}
                   >
-                    I'm interested →
+                    I'm interested
                   </a>
                 </div>
               </div>

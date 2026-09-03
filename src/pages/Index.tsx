@@ -20,14 +20,22 @@ const Index = () => {
         <meta property="og:description" content="Thoughtfully designed small-group travel to England, Wales, Scotland, and Ireland. Curated itineraries, comfortable pacing, and unforgettable memories." />
         <link rel="canonical" href="https://elderexcursions.com/" />
       </Helmet>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md focus:font-medium focus:text-base"
+      >
+        Skip to main content
+      </a>
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <TestimonialsSection />
-      <JourneysSection />
-      <IncludedSection />
-      <DesignedForSection />
-      <ContactSection />
+      <main id="main-content">
+        <HeroSection />
+        <AboutSection />
+        <TestimonialsSection />
+        <JourneysSection />
+        <IncludedSection />
+        <DesignedForSection />
+        <ContactSection />
+      </main>
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, ChevronUp, MapPin, CheckCircle, XCircle } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp, MapPin, CheckCircle, XCircle, Download } from "lucide-react";
 import Footer from "@/components/Footer";
 import heroImg from "@/assets/stonehenge.jpg";
 import cardiffCastleImg from "@/assets/cardiff-castle.jpg";
@@ -87,7 +87,7 @@ const days: Day[] = [
     description: "Morning and lunch at the extraordinary Eden Project — home of two giant biomes set in a reclaimed china clay pit, including the world's largest indoor rainforest. Back in Penzance, don't miss the Jubilee Pool — the UK's largest, most celebrated art deco sea water lido, geothermally heated. Don't forget your suit!",
     image: edenImg,
     alt: "Eden Project biome domes in Cornwall",
-    highlights: ["Eden Project", "World's largest indoor rainforest", "Jubilee Pool (art deco lido)", "Check in: Queen's Hotel Penzance"],
+    highlights: ["Eden Project", "World's largest indoor rainforest", "Jubilee Pool (art deco lido)", "Check in: Premier Inn Penzance"],
   },
   {
     day: 8,
@@ -174,10 +174,10 @@ const hotels = [
   {
     nights: "Nights 5–8",
     dates: "July 26–30",
-    name: "Queen's Hotel",
+    name: "Premier Inn Penzance",
     location: "Penzance, Cornwall",
-    description: "An elegant Victorian hotel overlooking Mount's Bay with views of St. Michael's Mount.",
-    url: "https://www.queens-hotel.com/",
+    description: "Comfortable, well-located hotel in Penzance, convenient for exploring Cornwall's coast and attractions.",
+    url: "https://www.premierinn.com/gb/en/hotels/england/cornwall/penzance/penzance.html",
   },
   {
     nights: "Nights 9–11",
@@ -241,7 +241,7 @@ const EnglandWalesItinerary = () => {
             "@type": "TravelAgency",
             "name": "Elder Excursions, LLC",
             "url": "https://elderexcursions.com",
-            "email": "elderexcursions@gmail.com"
+            "email": "tracyelder75@gmail.com"
           },
           "touristType": "History enthusiasts, small-group travelers",
           "itinerary": {
@@ -295,7 +295,7 @@ const EnglandWalesItinerary = () => {
             Cornwall, England & Wales
           </h1>
           <p className="text-white text-xl md:text-2xl font-light italic mb-4">
-            "Travel through time in Southern England and Wales"
+            “Travel through time in Southern England and Wales”
           </p>
           <p className="text-white text-sm mb-8">July 21 – August 4, 2027 &nbsp;·&nbsp; 15 Days &nbsp;·&nbsp; 18–25 Participants</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -304,6 +304,14 @@ const EnglandWalesItinerary = () => {
             </a>
             <a href="#itinerary" className="border-2 border-white text-white px-8 py-3.5 rounded-md font-medium hover:bg-white/20 transition-colors">
               View Full Itinerary
+            </a>
+            <a
+              href="/Cornwall%20Wales%20England%20Brochure%202027.pdf"
+              download
+              className="flex items-center justify-center gap-2 border-2 border-white/70 text-white px-8 py-3.5 rounded-md font-medium hover:bg-white/20 transition-colors"
+            >
+              <Download size={18} aria-hidden="true" />
+              Download Brochure
             </a>
           </div>
         </div>
@@ -477,7 +485,7 @@ const EnglandWalesItinerary = () => {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="py-20 bg-background">
+      <section id="pricing" className="py-20 bg-card">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">Ready to Join Us?</p>
@@ -531,8 +539,16 @@ const EnglandWalesItinerary = () => {
             <h3 className="font-heading text-2xl font-bold mb-2">Reserve Your Spot</h3>
             <p className="text-primary-foreground/80 mb-6 max-w-lg mx-auto">Contact Tracy Elder directly to register or ask any questions. Space is limited to 25 participants.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:elderexcursions@gmail.com" className="flex items-center justify-center gap-2 bg-primary-foreground text-primary px-6 py-3 rounded-md font-semibold text-sm hover:opacity-90 transition-opacity">
-                elderexcursions@gmail.com
+              <a href="mailto:tracyelder75@gmail.com" className="flex items-center justify-center gap-2 bg-primary-foreground text-primary px-6 py-3 rounded-md font-semibold text-sm hover:opacity-90 transition-opacity">
+                tracyelder75@gmail.com
+              </a>
+              <a
+                href="/Cornwall%20Wales%20England%20Brochure%202027.pdf"
+                download
+                className="flex items-center justify-center gap-2 border-2 border-primary-foreground/70 text-primary-foreground px-6 py-3 rounded-md font-semibold text-sm hover:bg-primary-foreground/10 transition-colors"
+              >
+                <Download size={16} aria-hidden="true" />
+                Download Brochure
               </a>
             </div>
           </div>
