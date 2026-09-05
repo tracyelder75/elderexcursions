@@ -2,9 +2,6 @@ import { Link } from "react-router-dom";
 import englandWalesImg from "@/assets/stonehenge.jpg";
 import scotlandImg from "@/assets/IMG_0824.JPG";
 import irelandImg from "@/assets/ireland.jpg";
-import washingtonDcImg from "@/assets/washington-dc.jpg";
-import arkExperienceImg from "@/assets/ark-experience.jpg";
-import dollywoodImg from "@/assets/dollywood.jpg";
 
 const trips = [
   {
@@ -51,27 +48,6 @@ const trips = [
   },
 ];
 
-const domesticTrips = [
-  {
-    title: "Washington D.C.",
-    image: washingtonDcImg,
-    description:
-      "Explore the nation's capital — monuments, Smithsonian Museums, Museum of the Bible, and rich American history at every turn.",
-  },
-  {
-    title: "The Ark Experience",
-    image: arkExperienceImg,
-    description:
-      "Visit the life-size Noah's Ark in Kentucky — a one-of-a-kind, awe-inspiring journey of faith and wonder.",
-  },
-  {
-    title: "Dollywood",
-    image: dollywoodImg,
-    description:
-      "Enjoy the charm of the Smoky Mountains with world-class entertainment, crafts, and Southern hospitality.",
-  },
-];
-
 const statusColor: Record<string, string> = {
   "Now Forming": "bg-accent text-white",
   "Preview Coming Soon": "bg-primary text-primary-foreground",
@@ -80,7 +56,7 @@ const statusColor: Record<string, string> = {
 
 const JourneysSection = () => {
   return (
-    <section id="journeys" className="py-24 bg-card">
+    <section id="journeys" className="scroll-mt-24 py-24 bg-card">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-accent text-base tracking-[0.2em] uppercase font-medium mb-3">
@@ -90,7 +66,7 @@ const JourneysSection = () => {
             Where Will We Go Next?
           </h2>
           <p className="text-muted-foreground text-lg">
-            Each year brings a new carefully planned adventure, both domestic and international.
+            Each year brings a new carefully planned adventure.
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -169,59 +145,6 @@ const JourneysSection = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Domestic Trips */}
-        <div className="mt-20">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-accent text-base tracking-[0.2em] uppercase font-medium mb-3">
-              Closer to Home
-            </p>
-            <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-              Domestic Getaway Ideas
-            </h3>
-            <p className="text-muted-foreground">
-              We're exploring shorter domestic trips too — let us know which destinations excite you!
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {domesticTrips.map((trip) => (
-              <div
-                key={trip.title}
-                className="bg-background rounded-lg overflow-hidden group"
-                style={{ boxShadow: "var(--shadow-card)" }}
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={trip.image}
-                    alt={trip.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    width={800}
-                    height={600}
-                  />
-                  <span className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-sm font-semibold shadow-md bg-foreground/80 text-background">
-                    Coming Soon
-                  </span>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-heading text-xl font-bold text-foreground mb-2">
-                    {trip.title}
-                  </h3>
-                  <p className="text-muted-foreground text-base leading-relaxed">
-                    {trip.description}
-                  </p>
-                  <a
-                    href="#contact"
-                    className="inline-block mt-4 text-primary font-medium text-base hover:underline"
-                    aria-label={`I'm interested in ${trip.title}`}
-                  >
-                    I'm interested
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

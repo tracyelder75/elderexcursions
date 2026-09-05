@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, ChevronUp, MapPin, CheckCircle, XCircle, Download } from "lucide-react";
+import { ChevronDown, ChevronUp, MapPin, CheckCircle, XCircle, Download } from "lucide-react";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import TripSubNav from "@/components/TripSubNav";
 import heroImg from "@/assets/stonehenge.jpg";
 import cardiffCastleImg from "@/assets/cardiff-castle.jpg";
 import pembrokeCastleImg from "@/assets/pembroke-castle.jpg";
@@ -197,16 +198,17 @@ const hotels = [
   },
 ];
 
-const navLinks = [
+const subNavLinks = [
   { label: "Overview", href: "#overview" },
   { label: "Itinerary", href: "#itinerary" },
   { label: "Lodging", href: "#lodging" },
   { label: "Pricing", href: "#pricing" },
 ];
 
+const subNavCta = { label: "Reserve Now", href: "#pricing" };
+
 const EnglandWalesItinerary = () => {
   const [openDays, setOpenDays] = useState<number[]>([]);
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   const toggle = (day: number) =>
     setOpenDays((prev) =>
@@ -251,39 +253,7 @@ const EnglandWalesItinerary = () => {
           }
         })}</script>
       </Helmet>
-      {/* Sticky nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-        <div className="container mx-auto flex items-center justify-between py-4 px-4">
-          <Link to="/" className="font-heading text-xl font-bold tracking-wide text-primary">
-            Elder Excursions
-          </Link>
-          <div className="hidden md:flex items-center gap-6">
-            {navLinks.map((l) => (
-              <a key={l.href} href={l.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                {l.label}
-              </a>
-            ))}
-            <a href="#pricing" className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-opacity">
-              Reserve Now
-            </a>
-          </div>
-          <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-        {mobileOpen && (
-          <div className="md:hidden bg-background border-b border-border px-4 pb-4 flex flex-col gap-3">
-            {navLinks.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="text-sm font-medium text-muted-foreground hover:text-primary py-2">
-                {l.label}
-              </a>
-            ))}
-            <a href="#pricing" onClick={() => setMobileOpen(false)} className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-medium text-center">
-              Reserve Now
-            </a>
-          </div>
-        )}
-      </nav>
+      <Navbar />
 
       {/* Hero */}
       <section className="relative min-h-[70vh] flex flex-col justify-end overflow-hidden">
@@ -336,8 +306,14 @@ const EnglandWalesItinerary = () => {
         </div>
       </div>
 
+      <TripSubNav
+        links={subNavLinks}
+        cta={subNavCta}
+        ariaLabel="Cornwall, England & Wales 2027 page sections"
+      />
+
       {/* Overview */}
-      <section id="overview" className="py-20 bg-background">
+      <section id="overview" className="scroll-mt-32 md:scroll-mt-40 py-20 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">What's Included</p>
@@ -397,7 +373,7 @@ const EnglandWalesItinerary = () => {
       </section>
 
       {/* Day-by-day */}
-      <section id="itinerary" className="py-20 bg-card">
+      <section id="itinerary" className="scroll-mt-32 md:scroll-mt-40 py-20 bg-card">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
             <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">Day by Day</p>
@@ -441,7 +417,7 @@ const EnglandWalesItinerary = () => {
       </section>
 
       {/* Lodging */}
-      <section id="lodging" className="py-20 bg-background">
+      <section id="lodging" className="scroll-mt-32 md:scroll-mt-40 py-20 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">Where You'll Stay</p>
@@ -485,7 +461,7 @@ const EnglandWalesItinerary = () => {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="py-20 bg-card">
+      <section id="pricing" className="scroll-mt-32 md:scroll-mt-40 py-20 bg-card">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">Ready to Join Us?</p>

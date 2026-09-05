@@ -22,18 +22,12 @@ const HeroSection = () => {
           Small-group journeys crafted with care, depth, and ease—balancing iconic
           destinations with meaningful, lesser-known experiences.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex justify-center">
           <a
             href="#journeys"
-            className="bg-accent text-accent-foreground px-8 py-3.5 rounded-md font-medium text-base hover:opacity-90 transition-opacity"
+            className="bg-accent text-accent-foreground px-12 py-5 rounded-md font-semibold text-lg md:text-xl hover:opacity-90 transition-opacity"
           >
             Explore Our Journeys
-          </a>
-          <a
-            href="#contact"
-            className="border border-secondary/40 text-secondary px-8 py-3.5 rounded-md font-medium text-base hover:bg-secondary/10 transition-colors"
-          >
-            Request Information
           </a>
         </div>
       </div>

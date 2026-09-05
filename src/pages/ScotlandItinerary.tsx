@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, ChevronUp, MapPin, CheckCircle, Info, Flag } from "lucide-react";
+import { ChevronDown, ChevronUp, MapPin, CheckCircle, Info, Flag } from "lucide-react";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import TripSubNav from "@/components/TripSubNav";
 import heroImg from "@/assets/urquhart-castle.jpg";
 import edinburghImg from "@/assets/edinburgh-arthurs-seat.jpg";
 import lochImg from "@/assets/scotland.jpg";
@@ -204,16 +206,21 @@ const testimonials = [
   "Will go down as one of my favorite trips! Really enjoyed the camaraderie. Thanks for your amazing efforts to keep us all pleased. Loved it!",
 ];
 
-const navLinks = [
+const subNavLinks = [
   { label: "Overview", href: "#overview" },
   { label: "Itinerary", href: "#itinerary" },
   { label: "Lodging", href: "#lodging" },
   { label: "Interest List", href: "#interest" },
 ];
 
+const subNavCta = {
+  label: "Join the Interest List",
+  shortLabel: "Interest List",
+  href: "#interest",
+};
+
 const ScotlandItinerary = () => {
   const [openDays, setOpenDays] = useState<string[]>([]);
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   const toggle = (key: string) =>
     setOpenDays((prev) =>
@@ -251,7 +258,7 @@ const ScotlandItinerary = () => {
         <meta property="og:url" content="https://elderexcursions.com/trips/scotland" />
         <meta property="og:title" content="Scotland 2028 – Elder Excursions Trip Itinerary" />
         <meta property="og:description" content="A 15-day small-group journey through the Scottish Highlands, Dornoch, Pitlochry, and Edinburgh, with an optional Scottish Open add-on in North Berwick. Dates &amp; pricing coming soon." />
-        <meta property="og:image" content="https://elderexcursions.com/og-image-scotland.jpg" />
+        <meta property="og:image" content="https://elderexcursions.com/og-image.jpg" />
         <link rel="canonical" href="https://elderexcursions.com/trips/scotland" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -262,7 +269,7 @@ const ScotlandItinerary = () => {
             "@type": "TravelAgency",
             "name": "Elder Excursions, LLC",
             "url": "https://elderexcursions.com",
-            "email": "elderexcursions@gmail.com"
+            "email": "tracyelder75@gmail.com"
           },
           "touristType": "Culturally curious travelers, small-group travelers, golf enthusiasts",
           "itinerary": {
@@ -273,39 +280,7 @@ const ScotlandItinerary = () => {
         })}</script>
       </Helmet>
 
-      {/* Sticky nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-        <div className="container mx-auto flex items-center justify-between py-4 px-4">
-          <Link to="/" className="font-heading text-xl font-bold tracking-wide text-primary">
-            Elder Excursions
-          </Link>
-          <div className="hidden md:flex items-center gap-6">
-            {navLinks.map((l) => (
-              <a key={l.href} href={l.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                {l.label}
-              </a>
-            ))}
-            <a href="#interest" className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-opacity">
-              Join the Interest List
-            </a>
-          </div>
-          <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-        {mobileOpen && (
-          <div className="md:hidden bg-background border-b border-border px-4 pb-4 flex flex-col gap-3">
-            {navLinks.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="text-sm font-medium text-muted-foreground hover:text-primary py-2">
-                {l.label}
-              </a>
-            ))}
-            <a href="#interest" onClick={() => setMobileOpen(false)} className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-medium text-center">
-              Join the Interest List
-            </a>
-          </div>
-        )}
-      </nav>
+      <Navbar />
 
       {/* Hero */}
       <section className="relative min-h-[70vh] flex flex-col justify-end overflow-hidden">
@@ -350,8 +325,14 @@ const ScotlandItinerary = () => {
         </div>
       </div>
 
+      <TripSubNav
+        links={subNavLinks}
+        cta={subNavCta}
+        ariaLabel="Scotland 2028 page sections"
+      />
+
       {/* Overview / Journey Highlights */}
-      <section id="overview" className="py-20 bg-background">
+      <section id="overview" className="scroll-mt-32 md:scroll-mt-40 py-20 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">What to Expect</p>
@@ -435,7 +416,7 @@ const ScotlandItinerary = () => {
       </section>
 
       {/* Day-by-day */}
-      <section id="itinerary" className="py-20 bg-card">
+      <section id="itinerary" className="scroll-mt-32 md:scroll-mt-40 py-20 bg-card">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
             <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">Day by Day</p>
@@ -462,7 +443,7 @@ const ScotlandItinerary = () => {
       </section>
 
       {/* Lodging */}
-      <section id="lodging" className="py-20 bg-background">
+      <section id="lodging" className="scroll-mt-32 md:scroll-mt-40 py-20 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">Where You'll Stay</p>
@@ -524,7 +505,7 @@ const ScotlandItinerary = () => {
       </section>
 
       {/* Interest List CTA */}
-      <section id="interest" className="relative py-20 overflow-hidden">
+      <section id="interest" className="scroll-mt-32 md:scroll-mt-40 relative py-20 overflow-hidden">
         <img src={lochImg} alt="Scottish loch and heather at sunset" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-primary/90" />
         <div className="relative container mx-auto px-4 max-w-3xl text-center text-primary-foreground">
@@ -541,8 +522,8 @@ const ScotlandItinerary = () => {
             Join the Interest List
           </Link>
           <div className="mt-6">
-            <a href="mailto:elderexcursions@gmail.com" className="text-primary-foreground/70 text-sm hover:text-primary-foreground transition-colors">
-              elderexcursions@gmail.com
+            <a href="mailto:tracyelder75@gmail.com" className="text-primary-foreground/70 text-sm hover:text-primary-foreground transition-colors">
+              tracyelder75@gmail.com
             </a>
           </div>
         </div>

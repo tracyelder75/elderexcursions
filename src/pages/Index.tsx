@@ -1,11 +1,12 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import JourneysSection from "@/components/JourneysSection";
 import IncludedSection from "@/components/IncludedSection";
+import DifferentWaySection from "@/components/DifferentWaySection";
 import DesignedForSection from "@/components/DesignedForSection";
+import AboutSection from "@/components/AboutSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -29,11 +30,16 @@ const Index = () => {
       <Navbar />
       <main id="main-content">
         <HeroSection />
-        <AboutSection />
-        <TestimonialsSection />
+        {/* Section order mirrors the global nav: Journeys, What We Offer
+            (What's Included / A Different Way to Travel / Designed for
+            Travelers Who…), About Us (About Elder Excursions / What People
+            Are Saying), then Request Info. */}
         <JourneysSection />
         <IncludedSection />
+        <DifferentWaySection />
         <DesignedForSection />
+        <AboutSection />
+        <TestimonialsSection />
         <ContactSection />
       </main>
       <Footer />

@@ -1,3 +1,5 @@
+import { Quote } from "lucide-react";
+
 const testimonials = [
   {
     quote: "Every detail and activity so carefully planned and curated. Thank you for the tremendous work that you did to make it memorable and special. What a wonderful resource and guide you are.",
@@ -38,7 +40,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-24 bg-card">
+    <section id="testimonials" className="scroll-mt-24 py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">
@@ -53,23 +55,41 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 max-w-6xl mx-auto">
+        {/*
+          Uniform cards: every card is the same width and stretches to the
+          height of its row, with the attribution pinned to the bottom. A
+          wrapping flex row (rather than a grid) keeps a trailing partial row
+          centred. On phones this collapses to a single column that scrolls
+          just as before.
+        */}
+        <ul className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto list-none p-0">
           {testimonials.map((t) => (
-            <div
+            <li
               key={t.name}
-              className="break-inside-avoid mb-6 bg-background rounded-lg p-7"
-              style={{ boxShadow: "var(--shadow-soft)" }}
+              className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
             >
-              <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">
-                {t.trip}
-              </p>
-              <blockquote className="text-muted-foreground text-sm leading-relaxed italic mb-5">
-                "{t.quote}"
-              </blockquote>
-              <p className="text-foreground text-sm font-semibold">— {t.name}</p>
-            </div>
+              <figure
+                className="h-full flex flex-col bg-card rounded-lg border border-border p-7"
+                style={{ boxShadow: "var(--shadow-soft)" }}
+              >
+                <Quote
+                  size={24}
+                  className="text-accent/50 shrink-0 mb-4"
+                  aria-hidden="true"
+                />
+                <blockquote className="text-muted-foreground text-base leading-relaxed italic flex-1">
+                  "{t.quote}"
+                </blockquote>
+                <figcaption className="mt-6 pt-5 border-t border-border">
+                  <p className="text-foreground text-base font-semibold">{t.name}</p>
+                  <p className="text-accent text-xs font-medium tracking-widest uppercase mt-1">
+                    {t.trip}
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

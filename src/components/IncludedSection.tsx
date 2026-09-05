@@ -11,7 +11,7 @@ const items = [
 
 const IncludedSection = () => {
   return (
-    <section id="included" className="py-24 bg-background">
+    <section id="included" className="scroll-mt-24 py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-accent text-base tracking-[0.2em] uppercase font-medium mb-3">
