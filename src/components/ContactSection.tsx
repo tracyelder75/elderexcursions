@@ -45,7 +45,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-card">
+    <section id="contact" className="scroll-mt-24 py-24 bg-card">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
@@ -151,9 +151,6 @@ const ContactSection = () => {
                     <option>2027 – England &amp; Wales</option>
                     <option>2028 – Scotland</option>
                     <option>2029 – Ireland</option>
-                    <option>Washington D.C.</option>
-                    <option>The Ark Experience</option>
-                    <option>Dollywood</option>
                     <option>Other / General Inquiry</option>
                   </select>
                 </div>

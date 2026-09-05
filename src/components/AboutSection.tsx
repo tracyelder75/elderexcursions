@@ -30,7 +30,7 @@ const features = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-background">
+    <section id="about" className="scroll-mt-24 py-24 bg-background">
       <div className="container mx-auto px-4">
 
         {/* Bio */}
@@ -77,7 +77,7 @@ const AboutSection = () => {
         </div>
 
         {/* Feature cards */}
-        <div className="text-center mb-10">
+        <div id="what-we-offer" className="scroll-mt-24 text-center mb-10">
           <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-2">
             What We Offer
           </p>

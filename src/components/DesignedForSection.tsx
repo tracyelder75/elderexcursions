@@ -9,7 +9,7 @@ const traits = [
 
 const DesignedForSection = () => {
   return (
-    <section id="designed-for" className="py-24 bg-card">
+    <section id="designed-for" className="scroll-mt-24 py-24 bg-card">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-accent text-base tracking-[0.2em] uppercase font-medium mb-3">
