@@ -14,7 +14,7 @@ const IncludedSection = () => {
     <section id="included" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">
+          <p className="text-accent text-base tracking-[0.2em] uppercase font-medium mb-3">
             Stress-Free Travel
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -27,14 +27,14 @@ const IncludedSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {items.map((item) => (
             <div key={item.label} className="flex items-start gap-4 p-5 rounded-lg bg-card" style={{ boxShadow: "var(--shadow-soft)" }}>
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/15 text-accent flex items-center justify-center">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/15 text-accent flex items-center justify-center" aria-hidden="true">
                 <item.icon size={20} />
               </div>
-              <p className="text-foreground text-sm leading-relaxed pt-1.5">{item.label}</p>
+              <p className="text-foreground text-base leading-relaxed pt-1">{item.label}</p>
             </div>
           ))}
         </div>
-        <p className="text-center text-muted-foreground text-sm mt-8 italic">
+        <p className="text-center text-muted-foreground text-base mt-8 italic">
           Airfare not included. Suggested flights will be provided; travelers may choose their preferred flights.
         </p>
       </div>

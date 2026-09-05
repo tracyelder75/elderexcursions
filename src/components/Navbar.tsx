@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
@@ -23,34 +22,23 @@ const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-base font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               {l.label}
             </a>
           ))}
-          <Link
-            to="/trips/england-wales"
-            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-          >
-            Wales/England Trip
-          </Link>
-          <Link
-            to="/trips/scotland"
-            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-          >
-            Scotland Trip
-          </Link>
           <a
             href="#contact"
-            className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-opacity"
+            className="bg-primary text-primary-foreground px-5 py-2.5 rounded-md text-base font-medium hover:opacity-90 transition-opacity"
           >
             Request Info
           </a>
         </div>
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-foreground p-2"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -62,29 +50,15 @@ const Navbar = () => {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-sm font-medium text-muted-foreground hover:text-primary py-2"
+              className="text-base font-medium text-muted-foreground hover:text-primary py-3"
             >
               {l.label}
             </a>
           ))}
-          <Link
-            to="/trips/england-wales"
-            onClick={() => setOpen(false)}
-            className="text-sm font-medium text-muted-foreground hover:text-primary py-2"
-          >
-            Wales/England Trip
-          </Link>
-          <Link
-            to="/trips/scotland"
-            onClick={() => setOpen(false)}
-            className="text-sm font-medium text-muted-foreground hover:text-primary py-2"
-          >
-            Scotland Trip
-          </Link>
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-medium text-center"
+            className="bg-primary text-primary-foreground px-5 py-3 rounded-md text-base font-medium text-center"
           >
             Request Info
           </a>
