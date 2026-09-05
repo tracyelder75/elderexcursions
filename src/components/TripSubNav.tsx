@@ -1,8 +1,11 @@
 type SubNavLink = { label: string; href: string };
 
+/** `shortLabel` replaces `label` on narrow screens, where the row is tight. */
+type SubNavCta = SubNavLink & { shortLabel?: string };
+
 type TripSubNavProps = {
   links: SubNavLink[];
-  cta: SubNavLink;
+  cta: SubNavCta;
   /** Accessible name for the nav landmark, e.g. "Scotland 2028 page sections". */
   ariaLabel: string;
 };
@@ -38,7 +41,8 @@ const TripSubNav = ({ links, cta, ariaLabel }: TripSubNavProps) => {
             href={cta.href}
             className="shrink-0 bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-opacity"
           >
-            {cta.label}
+            <span className="sm:hidden">{cta.shortLabel ?? cta.label}</span>
+            <span className="hidden sm:inline">{cta.label}</span>
           </a>
         </div>
       </div>

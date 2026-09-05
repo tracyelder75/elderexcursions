@@ -213,7 +213,11 @@ const subNavLinks = [
   { label: "Interest List", href: "#interest" },
 ];
 
-const subNavCta = { label: "Join the Interest List", href: "#interest" };
+const subNavCta = {
+  label: "Join the Interest List",
+  shortLabel: "Interest List",
+  href: "#interest",
+};
 
 const ScotlandItinerary = () => {
   const [openDays, setOpenDays] = useState<string[]>([]);
