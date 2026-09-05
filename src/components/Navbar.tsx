@@ -25,7 +25,7 @@ const navGroups: NavGroup[] = [
   {
     label: "About Us",
     items: [
-      { label: "About EE", to: "/#about" },
+      { label: "About Elder Excursions", to: "/#about" },
       { label: "What People Are Saying", to: "/#testimonials" },
     ],
   },

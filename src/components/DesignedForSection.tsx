@@ -9,7 +9,7 @@ const traits = [
 
 const DesignedForSection = () => {
   return (
-    <section id="designed-for" className="scroll-mt-24 py-24 bg-card">
+    <section id="designed-for" className="scroll-mt-24 py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-accent text-base tracking-[0.2em] uppercase font-medium mb-3">
@@ -22,7 +22,7 @@ const DesignedForSection = () => {
             {traits.map((t) => (
               <div
                 key={t.text}
-                className="flex items-center gap-4 bg-background rounded-lg p-5 text-left"
+                className="flex items-center gap-4 bg-card rounded-lg p-5 text-left"
                 style={{ boxShadow: "var(--shadow-soft)" }}
               >
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center" aria-hidden="true">

@@ -40,7 +40,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="scroll-mt-24 py-24 bg-card">
+    <section id="testimonials" className="scroll-mt-24 py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">
@@ -69,7 +69,7 @@ const TestimonialsSection = () => {
               className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
             >
               <figure
-                className="h-full flex flex-col bg-background rounded-lg border border-border p-7"
+                className="h-full flex flex-col bg-card rounded-lg border border-border p-7"
                 style={{ boxShadow: "var(--shadow-soft)" }}
               >
                 <Quote
