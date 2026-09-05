@@ -14,7 +14,6 @@ type Day = {
   location: string;
   night: string | null;
   description: string;
-  tentative?: boolean;
 };
 
 const days: Day[] = [
@@ -40,8 +39,7 @@ const days: Day[] = [
     day: 4,
     location: "Inverness",
     night: "Night 3 of 3",
-    description: "A day trip to the Isle of Skye — still being finalized as we confirm timing and logistics.",
-    tentative: true,
+    description: "A free day to explore Inverness at your own pace.",
   },
   {
     day: 5,
@@ -89,7 +87,7 @@ const days: Day[] = [
     day: 12,
     location: "Edinburgh",
     night: "Night 2 of 4",
-    description: "A day trip to Abbotsford, the historic home of Sir Walter Scott.",
+    description: "Board the historic Waverly train line for a day trip to Abbotsford, the historic home of Sir Walter Scott.",
   },
   {
     day: 13,
@@ -101,17 +99,26 @@ const days: Day[] = [
     day: 14,
     location: "Edinburgh",
     night: "Night 4 of 4",
-    description: "A second free day in Edinburgh — extra time to see whatever you missed the first time around.",
+    description: "A second day in Edinburgh — plans being developed.",
   },
   {
     day: 15,
-    location: "North Berwick",
+    location: "Fly Home",
+    night: null,
+    description: "Depart Scotland for the US with a lifetime of Highland memories.",
+  },
+];
+
+const optionalDays: Day[] = [
+  {
+    day: 15,
+    location: "Optional Add-on — North Berwick",
     night: "Night 1 of 2",
     description: "Transfer to the Renaissance Club for the Scottish Open Pro-Am.",
   },
   {
     day: 16,
-    location: "North Berwick",
+    location: "Optional Add-on — North Berwick",
     night: "Night 2 of 2",
     description: "Scottish Open, Round 1 — a fitting close to the journey for golf lovers.",
   },
@@ -124,12 +131,17 @@ const days: Day[] = [
 ];
 
 const stays = [
-  { location: "Inverness", nights: 3, note: "Highland base for Culloden, Cawdor Castle, and Skye" },
+  { location: "Inverness", nights: 3, note: "Highland base for Culloden, Cawdor Castle, and free time in town" },
   { location: "Dornoch", nights: 3, note: "Coastal base for whisky, castles, and the Orkney ferry" },
   { location: "Pitlochry", nights: 3, note: "Perthshire base for distilleries and Blair Castle" },
   { location: "Edinburgh", nights: 4, note: "In-depth time in the capital, at a relaxed pace" },
-  { location: "North Berwick", nights: 2, note: "Coastal base for the Scottish Open" },
 ];
+
+const optionalStay = {
+  location: "North Berwick",
+  nights: 2,
+  note: "Coastal base for the Scottish Open",
+};
 
 const highlights = [
   {
@@ -204,28 +216,51 @@ const subNavLinks = [
 const subNavCta = { label: "Join the Interest List", href: "#interest" };
 
 const ScotlandItinerary = () => {
-  const [openDays, setOpenDays] = useState<number[]>([]);
+  const [openDays, setOpenDays] = useState<string[]>([]);
 
-  const toggle = (day: number) =>
+  const toggle = (key: string) =>
     setOpenDays((prev) =>
-      prev.includes(day) ? prev.filter((d) => d !== day) : [...prev, day]
+      prev.includes(key) ? prev.filter((d) => d !== key) : [...prev, key]
     );
+
+  const renderDay = (d: Day, prefix: string) => {
+    const key = `${prefix}-${d.day}`;
+    return (
+      <div key={key} className="bg-background rounded-lg border border-border overflow-hidden" style={{ boxShadow: "var(--shadow-soft)" }}>
+        <button onClick={() => toggle(key)} className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-muted/50 transition-colors" aria-expanded={openDays.includes(key)}>
+          <div className="flex items-center gap-4">
+            <span className="bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full shrink-0">Day {d.day}</span>
+            <div>
+              <p className="font-heading font-bold text-foreground">{d.location}</p>
+              {d.night && <p className="text-xs text-muted-foreground">{d.night}</p>}
+            </div>
+          </div>
+          {openDays.includes(key) ? <ChevronUp size={18} className="text-muted-foreground shrink-0" /> : <ChevronDown size={18} className="text-muted-foreground shrink-0" />}
+        </button>
+        {openDays.includes(key) && (
+          <div className="px-6 pb-5 border-t border-border">
+            <p className="text-muted-foreground text-sm leading-relaxed mt-4">{d.description}</p>
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Scotland 2028 Itinerary – Elder Excursions</title>
-        <meta name="description" content="Preview the 17-day Scotland 2028 small-group journey from Elder Excursions — Inverness, Dornoch, Pitlochry, Edinburgh, and an optional Scottish Open golf experience in North Berwick." />
+        <meta name="description" content="Preview the 15-day Scotland 2028 small-group journey from Elder Excursions — Inverness, Dornoch, Pitlochry, and Edinburgh, plus an optional Scottish Open golf add-on in North Berwick." />
         <meta property="og:url" content="https://elderexcursions.com/trips/scotland" />
         <meta property="og:title" content="Scotland 2028 – Elder Excursions Trip Itinerary" />
-        <meta property="og:description" content="A 17-day small-group journey through the Scottish Highlands, Dornoch, Pitlochry, and Edinburgh, closing with the Scottish Open in North Berwick. Dates & pricing coming soon." />
+        <meta property="og:description" content="A 15-day small-group journey through the Scottish Highlands, Dornoch, Pitlochry, and Edinburgh, with an optional Scottish Open add-on in North Berwick. Dates &amp; pricing coming soon." />
         <meta property="og:image" content="https://elderexcursions.com/og-image.jpg" />
         <link rel="canonical" href="https://elderexcursions.com/trips/scotland" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "TouristTrip",
           "name": "Scotland 2028",
-          "description": "17-day small-group journey through the Scottish Highlands, Dornoch, Pitlochry, and Edinburgh, closing with the Scottish Open in North Berwick.",
+          "description": "15-day small-group journey through the Scottish Highlands, Dornoch, Pitlochry, and Edinburgh, with an optional Scottish Open add-on in North Berwick.",
           "organizer": {
             "@type": "TravelAgency",
             "name": "Elder Excursions, LLC",
@@ -235,8 +270,8 @@ const ScotlandItinerary = () => {
           "touristType": "Culturally curious travelers, small-group travelers, golf enthusiasts",
           "itinerary": {
             "@type": "ItemList",
-            "name": "17-Day Itinerary",
-            "numberOfItems": 17
+            "name": "15-Day Itinerary",
+            "numberOfItems": 15
           }
         })}</script>
       </Helmet>
@@ -255,7 +290,7 @@ const ScotlandItinerary = () => {
           <p className="text-white text-xl md:text-2xl font-light italic mb-4">
             Highlands, castles, whisky &amp; the Scottish Open — Summer 2028
           </p>
-          <p className="text-white text-sm mb-8">17 Days &nbsp;·&nbsp; 16 Nights &nbsp;·&nbsp; Dates &amp; Pricing Coming Soon</p>
+          <p className="text-white text-sm mb-8">15 Days &nbsp;·&nbsp; 14 Nights &nbsp;·&nbsp; Optional Scottish Open Add-on &nbsp;·&nbsp; Dates &amp; Pricing Coming Soon</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#interest" className="bg-accent text-accent-foreground px-8 py-3.5 rounded-md font-medium hover:opacity-90 transition-opacity">
               Join the Interest List
@@ -272,9 +307,9 @@ const ScotlandItinerary = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {[
-              { value: "17", label: "Days of Adventure" },
-              { value: "16", label: "Nights Lodging" },
-              { value: "5", label: "Destinations" },
+              { value: "15", label: "Days of Adventure" },
+              { value: "14", label: "Nights Lodging" },
+              { value: "4", label: "Home Bases" },
               { value: "2028", label: "Summer, Dates TBD" },
             ].map((s) => (
               <div key={s.label}>
@@ -381,34 +416,24 @@ const ScotlandItinerary = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
             <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">Day by Day</p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">Full 17-Day Itinerary</h2>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">Full 15-Day Itinerary</h2>
             <p className="text-muted-foreground mt-2">Summer 2028 — exact dates depend on the Scottish Open schedule</p>
           </div>
           <div className="space-y-3">
-            {days.map((d) => (
-              <div key={d.day} className="bg-background rounded-lg border border-border overflow-hidden" style={{ boxShadow: "var(--shadow-soft)" }}>
-                <button onClick={() => toggle(d.day)} className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-muted/50 transition-colors">
-                  <div className="flex items-center gap-4">
-                    <span className="bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full shrink-0">Day {d.day}</span>
-                    <div>
-                      <p className="font-heading font-bold text-foreground">
-                        {d.location}
-                        {d.tentative && (
-                          <span className="ml-2 text-xs font-medium text-accent align-middle">(tentative)</span>
-                        )}
-                      </p>
-                      {d.night && <p className="text-xs text-muted-foreground">{d.night}</p>}
-                    </div>
-                  </div>
-                  {openDays.includes(d.day) ? <ChevronUp size={18} className="text-muted-foreground shrink-0" /> : <ChevronDown size={18} className="text-muted-foreground shrink-0" />}
-                </button>
-                {openDays.includes(d.day) && (
-                  <div className="px-6 pb-5 border-t border-border">
-                    <p className="text-muted-foreground text-sm leading-relaxed mt-4">{d.description}</p>
-                  </div>
-                )}
-              </div>
-            ))}
+            {days.map((d) => renderDay(d, "main"))}
+          </div>
+
+          {/* Optional add-on */}
+          <div className="mt-16 pt-10 border-t-2 border-accent/40 text-center mb-8">
+            <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">Optional Add-On</p>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">The Scottish Open — North Berwick</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+              A separate, optional extension for golf lovers. Instead of flying home on Day 15, add two nights
+              on the coast at North Berwick and fly home on Day 17.
+            </p>
+          </div>
+          <div className="space-y-3">
+            {optionalDays.map((d) => renderDay(d, "optional"))}
           </div>
         </div>
       </section>
@@ -418,7 +443,7 @@ const ScotlandItinerary = () => {
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">Where You'll Stay</p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">16 Nights, 5 Home Bases</h2>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">14 Nights — 4 Home Bases</h2>
             <p className="text-muted-foreground mt-2">Specific hotels will be confirmed once dates are locked in.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -440,6 +465,19 @@ const ScotlandItinerary = () => {
               <p className="text-muted-foreground text-sm leading-relaxed">
                 The final two nights in North Berwick center on the Scottish Open — an optional golf-focused close to the journey.
               </p>
+            </div>
+            <div className="bg-card rounded-lg p-6 border border-accent/40" style={{ boxShadow: "var(--shadow-soft)" }}>
+              <div className="flex items-center justify-between mb-3">
+                <span className="bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full">
+                  {optionalStay.nights} Nights
+                </span>
+                <MapPin size={16} className="text-accent" />
+              </div>
+              <div className="flex flex-wrap items-center gap-2 mb-1">
+                <h3 className="font-heading text-lg font-bold text-foreground">{optionalStay.location}</h3>
+                <span className="bg-accent/15 text-accent text-xs font-semibold px-2.5 py-1 rounded-full">Optional Add-on</span>
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed">{optionalStay.note}</p>
             </div>
           </div>
         </div>
