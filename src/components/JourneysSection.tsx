@@ -23,14 +23,15 @@ const trips = [
   },
   {
     year: "2028",
+    dates: "Summer 2028",
     title: "Scotland",
-    status: "Preview Coming Soon",
+    status: "Now Forming",
     image: scotlandImg,
-    itineraryPath: null,
+    itineraryPath: "/trips/scotland",
     highlights: [
       "Edinburgh's Royal Mile & castle",
       "Scottish Highlands & lochs",
-      "Isle of Skye",
+      "Orkney Islands",
       "Whisky distillery experiences",
       "Historic castles & coastal villages",
     ],
