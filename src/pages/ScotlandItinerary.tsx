@@ -87,7 +87,7 @@ const days: Day[] = [
     day: 12,
     location: "Edinburgh",
     night: "Night 2 of 4",
-    description: "Board the historic Waverly train line for a day trip to Abbotsford, the historic home of Sir Walter Scott.",
+    description: "Board the historic Waverley train line for a day trip to Abbotsford, the historic home of Sir Walter Scott.",
   },
   {
     day: 13,
@@ -294,7 +294,7 @@ const ScotlandItinerary = () => {
           <p className="text-white text-xl md:text-2xl font-light italic mb-4">
             Highlands, castles, whisky &amp; the Scottish Open — Summer 2028
           </p>
-          <p className="text-white text-sm mb-8">15 Days &nbsp;·&nbsp; 14 Nights &nbsp;·&nbsp; Optional Scottish Open Add-on &nbsp;·&nbsp; Dates &amp; Pricing Coming Soon</p>
+          <p className="text-white text-sm mb-8">15 Days &nbsp;·&nbsp; 13 Nights &nbsp;·&nbsp; Optional Scottish Open Add-on &nbsp;·&nbsp; Dates &amp; Pricing Coming Soon</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#interest" className="bg-accent text-accent-foreground px-8 py-3.5 rounded-md font-medium hover:opacity-90 transition-opacity">
               Join the Interest List
@@ -312,7 +312,7 @@ const ScotlandItinerary = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {[
               { value: "15", label: "Days of Adventure" },
-              { value: "14", label: "Nights Lodging" },
+              { value: "13", label: "Nights Lodging" },
               { value: "4", label: "Home Bases" },
               { value: "2028", label: "Summer, Dates TBD" },
             ].map((s) => (
@@ -447,7 +447,7 @@ const ScotlandItinerary = () => {
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <p className="text-accent text-sm tracking-[0.2em] uppercase font-medium mb-3">Where You'll Stay</p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">14 Nights — 4 Home Bases</h2>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">13 Nights — 4 Home Bases</h2>
             <p className="text-muted-foreground mt-2">Specific hotels will be confirmed once dates are locked in.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
