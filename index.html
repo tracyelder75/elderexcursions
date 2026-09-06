@@ -12,30 +12,36 @@
     <meta name="description" content="Elder Excursions offers thoughtfully designed small-group travel to England, Wales, Scotland, and Ireland. Carefully curated itineraries, comfortable pacing, and unforgettable history-themed experiences for curious travelers." />
     <meta name="keywords" content="small group travel, England tours, Wales tours, Scotland tours, Ireland tours, British Isles travel, senior travel, history tours, Elder Excursions" />
     <meta name="author" content="Elder Excursions, LLC" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow" data-rh="true" />
     <!-- No canonical here: each route sets its own via react-helmet-async.
          A hardcoded one would survive into every route's HTML and give pages
          like /trips/england-wales two conflicting canonicals, which Google
          resolves by ignoring both. -->
 
-    <!-- Open Graph (Facebook, LinkedIn, iMessage previews) -->
+    <!-- Open Graph (Facebook, LinkedIn, iMessage previews).
+         These are the tags social scrapers actually read: they do not run our
+         JS, so the react-helmet-async versions never exist for them and this
+         block has to stand on its own. data-rh="true" marks the tags each
+         route re-declares, so Helmet replaces them for crawlers that do render
+         instead of appending a second, conflicting copy. Only add it to a tag
+         every route sets — Helmet deletes any data-rh tag a route omits. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Elder Excursions" />
-    <meta property="og:url" content="https://elderexcursions.com/" />
-    <meta property="og:title" content="ElderExcursions.com" />
-    <meta property="og:description" content="Thoughtfully designed small-group travel to England, Wales, Scotland, and Ireland. Curated itineraries, comfortable pacing, and unforgettable memories for curious travelers." />
-    <meta property="og:image" content="https://elderexcursions.com/og-image.jpg" />
+    <meta property="og:url" content="https://elderexcursions.com/" data-rh="true" />
+    <meta property="og:title" content="Elder Excursions – Small-Group Journeys to England, Wales, Scotland &amp; Ireland" data-rh="true" />
+    <meta property="og:description" content="Thoughtfully designed small-group travel to England, Wales, Scotland, and Ireland. Curated itineraries, comfortable pacing, and unforgettable memories for curious travelers." data-rh="true" />
+    <meta property="og:image" content="https://elderexcursions.com/og-image.jpg" data-rh="true" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Scenic English countryside — Elder Excursions" />
+    <meta property="og:image:alt" content="Scenic English countryside — Elder Excursions" data-rh="true" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ElderExcursions.com" />
-    <meta name="twitter:description" content="Thoughtfully designed small-group travel to England, Wales, Scotland, and Ireland. Curated itineraries and unforgettable history-themed experiences." />
-    <meta name="twitter:image" content="https://elderexcursions.com/og-image.jpg" />
-    <meta name="twitter:image:alt" content="Scenic English countryside — Elder Excursions" />
+    <meta name="twitter:title" content="Elder Excursions – Small-Group Journeys to England, Wales, Scotland &amp; Ireland" data-rh="true" />
+    <meta name="twitter:description" content="Thoughtfully designed small-group travel to England, Wales, Scotland, and Ireland. Curated itineraries and unforgettable history-themed experiences." data-rh="true" />
+    <meta name="twitter:image" content="https://elderexcursions.com/og-image.jpg" data-rh="true" />
+    <meta name="twitter:image:alt" content="Scenic English countryside — Elder Excursions" data-rh="true" />
 
     <!-- Structured Data: Travel Agency -->
     <script type="application/ld+json">
@@ -43,6 +49,7 @@
       "@context": "https://schema.org",
       "@type": "TravelAgency",
       "name": "Elder Excursions, LLC",
+      "alternateName": "Elder Excursions",
       "description": "Thoughtfully designed small-group journeys to England, Wales, Scotland, and Ireland for curious travelers.",
       "url": "https://elderexcursions.com",
       "email": "elderexcursions@gmail.com",

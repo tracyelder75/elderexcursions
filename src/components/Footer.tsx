@@ -12,7 +12,7 @@ const Footer = () => {
           </a>
         </div>
         <p className="text-primary-foreground/80 text-sm">
-          © {new Date().getFullYear()} Elder Excursions. All rights reserved.
+          © {new Date().getFullYear()} Elder Excursions, LLC. All rights reserved.
         </p>
       </div>
     </footer>

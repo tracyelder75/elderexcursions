@@ -19,6 +19,12 @@ const Index = () => {
         <meta property="og:url" content="https://elderexcursions.com/" />
         <meta property="og:title" content="Elder Excursions – Small-Group History Journeys to the British Isles" />
         <meta property="og:description" content="Thoughtfully designed small-group travel to England, Wales, Scotland, and Ireland. Curated itineraries, comfortable pacing, and unforgettable memories." />
+        <meta name="twitter:title" content="Elder Excursions – Small-Group History Journeys to the British Isles" />
+        <meta name="twitter:description" content="Thoughtfully designed small-group travel to England, Wales, Scotland, and Ireland. Curated itineraries, comfortable pacing, and unforgettable memories." />
+        <meta property="og:image" content="https://elderexcursions.com/og-image.jpg" />
+        <meta property="og:image:alt" content="Scenic English countryside — Elder Excursions" />
+        <meta name="twitter:image:alt" content="Scenic English countryside — Elder Excursions" />
+        <meta name="twitter:image" content="https://elderexcursions.com/og-image.jpg" />
         <link rel="canonical" href="https://elderexcursions.com/" />
       </Helmet>
       <a
