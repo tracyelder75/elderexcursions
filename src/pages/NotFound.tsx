@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -12,6 +13,13 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      {/* Netlify's SPA fallback answers unknown URLs with HTTP 200, so without
+          this a bad URL is a soft 404 carrying the homepage's title and meta —
+          exactly the kind of duplicate Google will index instead of "/". */}
+      <Helmet>
+        <title>Page Not Found – Elder Excursions</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <Navbar />
       <main className="flex flex-1 items-center justify-center px-4 py-32">
         <div className="text-center">

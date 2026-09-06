@@ -224,6 +224,11 @@ const EnglandWalesItinerary = () => {
         <meta property="og:title" content="Cornwall, England & Wales 2027 – Elder Excursions Trip Itinerary" />
         <meta property="og:description" content="15-day small-group journey through Cornwall, England and Wales. July 21–August 4, 2027. From $4,395/person. Visit Stonehenge, Tintagel, Highclere Castle, Windsor Castle and more." />
         <meta property="og:image" content="https://elderexcursions.com/og-image-england-wales.jpg" />
+        <meta name="twitter:title" content="Cornwall, England &amp; Wales 2027 – Elder Excursions Trip Itinerary" />
+        <meta name="twitter:description" content="15-day small-group journey through Cornwall, England and Wales. July 21–August 4, 2027. From $4,395/person. Visit Stonehenge, Tintagel, Highclere Castle, Windsor Castle and more." />
+        <meta name="twitter:image" content="https://elderexcursions.com/og-image-england-wales.jpg" />
+        <meta property="og:image:alt" content="Cornwall, England &amp; Wales 2027 — Elder Excursions" />
+        <meta name="twitter:image:alt" content="Cornwall, England &amp; Wales 2027 — Elder Excursions" />
         <link rel="canonical" href="https://elderexcursions.com/trips/england-wales" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

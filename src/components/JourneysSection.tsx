@@ -10,6 +10,7 @@ const trips = [
     title: "England & Wales",
     status: "Now Forming",
     image: englandWalesImg,
+    imageAlt: "Stonehenge at dusk on the Elder Excursions England & Wales 2027 journey",
     itineraryPath: "/trips/england-wales",
     highlights: [
       "Iconic castles, palaces & historic sites",
@@ -24,6 +25,7 @@ const trips = [
     title: "Scotland",
     status: "Now Forming",
     image: scotlandImg,
+    imageAlt: "Urquhart Castle ruins above Loch Ness, visited on the Elder Excursions Scotland 2028 journey",
     itineraryPath: "/trips/scotland",
     highlights: [
       "Edinburgh's Royal Mile & castle",
@@ -38,6 +40,7 @@ const trips = [
     title: "Ireland",
     status: "Future Journey",
     image: irelandImg,
+    imageAlt: "Green fields and dry stone walls above the Irish coast, the Elder Excursions Ireland 2029 journey",
     itineraryPath: null,
     highlights: [
       "Dublin's pubs, museums, and city buzz",
@@ -81,7 +84,7 @@ const JourneysSection = () => {
                   <Link to={trip.itineraryPath} className="block w-full h-full" aria-label={`View ${trip.title} itinerary`}>
                     <img
                       src={trip.image}
-                      alt={`${trip.title} destination`}
+                      alt={trip.imageAlt}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                       width={800}
@@ -91,7 +94,7 @@ const JourneysSection = () => {
                 ) : (
                   <img
                     src={trip.image}
-                    alt={`${trip.title} destination`}
+                    alt={trip.imageAlt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                     width={800}

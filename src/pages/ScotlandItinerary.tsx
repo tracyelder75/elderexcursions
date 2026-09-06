@@ -258,6 +258,11 @@ const ScotlandItinerary = () => {
         <meta property="og:title" content="Scotland 2028 – Elder Excursions Trip Itinerary" />
         <meta property="og:description" content="A 15-day small-group journey through the Scottish Highlands, Dornoch, Pitlochry, and Edinburgh, with an optional Scottish Open add-on in North Berwick. Dates &amp; pricing coming soon." />
         <meta property="og:image" content="https://elderexcursions.com/og-image.jpg" />
+        <meta name="twitter:title" content="Scotland 2028 – Elder Excursions Trip Itinerary" />
+        <meta name="twitter:description" content="A 15-day small-group journey through the Scottish Highlands, Dornoch, Pitlochry, and Edinburgh, with an optional Scottish Open add-on in North Berwick. Dates &amp; pricing coming soon." />
+        <meta property="og:image:alt" content="Scotland 2028 — Elder Excursions" />
+        <meta name="twitter:image:alt" content="Scotland 2028 — Elder Excursions" />
+        <meta name="twitter:image" content="https://elderexcursions.com/og-image.jpg" />
         <link rel="canonical" href="https://elderexcursions.com/trips/scotland" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
