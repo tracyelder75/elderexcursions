@@ -1,8 +1,11 @@
 import heroImage from "@/assets/hero-england.jpg";
 
 const HeroSection = () => {
+  // pt-24 reserves the fixed navbar's height. Without it the vertically
+  // centered content creeps under the nav on short viewports — a 1366x620
+  // laptop window put the heading 36px behind it.
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-12">
       <img
         src={heroImage}
         alt="Scenic English countryside village at golden hour on an Elder Excursions small-group journey"
