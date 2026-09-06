@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import englandWalesImg from "@/assets/stonehenge.jpg";
-import scotlandImg from "@/assets/IMG_0824.JPG";
+import scotlandImg from "@/assets/scotland-journey-card.jpg";
 import irelandImg from "@/assets/ireland.jpg";
 
 const trips = [

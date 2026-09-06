@@ -99,7 +99,7 @@ const ContactSection = () => {
                     {...register("name")}
                     aria-describedby={errors.name ? "contact-name-error" : undefined}
                     aria-invalid={!!errors.name}
-                    autocomplete="name"
+                    autoComplete="name"
                     className={`w-full px-4 py-2.5 rounded-md border bg-background text-foreground text-base focus:outline-none focus:ring-2 focus:ring-ring ${errors.name ? "border-destructive" : "border-border"}`}
                     placeholder="Your name"
                   />
@@ -117,7 +117,7 @@ const ContactSection = () => {
                     {...register("email")}
                     aria-describedby={errors.email ? "contact-email-error" : undefined}
                     aria-invalid={!!errors.email}
-                    autocomplete="email"
+                    autoComplete="email"
                     className={`w-full px-4 py-2.5 rounded-md border bg-background text-foreground text-base focus:outline-none focus:ring-2 focus:ring-ring ${errors.email ? "border-destructive" : "border-border"}`}
                     placeholder="you@email.com"
                   />
@@ -133,7 +133,7 @@ const ContactSection = () => {
                     id="contact-phone"
                     type="tel"
                     {...register("phone")}
-                    autocomplete="tel"
+                    autoComplete="tel"
                     className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-base focus:outline-none focus:ring-2 focus:ring-ring"
                     placeholder="Your phone number"
                   />
