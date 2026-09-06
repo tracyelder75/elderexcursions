@@ -210,7 +210,6 @@ const subNavLinks = [
   { label: "Overview", href: "#overview" },
   { label: "Itinerary", href: "#itinerary" },
   { label: "Lodging", href: "#lodging" },
-  { label: "Interest List", href: "#interest" },
 ];
 
 const subNavCta = {
