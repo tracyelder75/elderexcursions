@@ -132,3 +132,44 @@ html {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Printing. Letter portrait is what the booth flyer at /trips/scotland/qr is
+   laid out for, and a sane default for anyone printing the itinerary pages. */
+@page {
+  size: letter portrait;
+  margin: 0.5in;
+}
+
+/* These rules override Tailwind utilities that Tailwind emits after this file
+   (the responsive `sm:` variants), so they need !important to win. */
+@media print {
+  html,
+  body {
+    background: #fff;
+  }
+
+  /* A printed sheet fills the page rather than sitting in a centered card. */
+  .print-sheet {
+    max-width: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    break-inside: avoid;
+    /* Keep the brand green and gold on paper instead of letting the browser
+       drop colored text and rules. */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Sized in inches so the code prints large enough to scan from arm's length. */
+  .print-qr {
+    width: 2.75in !important;
+    height: 2.75in !important;
+    margin-top: 0.3in !important;
+  }
+
+  /* Tighten the vertical rhythm so everything lands on a single sheet. */
+  .print-rule {
+    margin-top: 0.3in !important;
+    margin-bottom: 0.3in !important;
+  }
+}
