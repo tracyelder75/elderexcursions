@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { ChevronDown, ChevronUp, MapPin, CheckCircle, XCircle, Download } from "lucide-react";
+import { ChevronDown, ChevronUp, MapPin, CheckCircle, XCircle } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import TripSubNav from "@/components/TripSubNav";
-import brochurePdf from "@/assets/2027 Wales  England Trip Brochure.pdf";
 import heroImg from "@/assets/stonehenge.jpg";
 import cardiffCastleImg from "@/assets/cardiff-castle.jpg";
 import pembrokeCastleImg from "@/assets/pembroke-castle.jpg";
@@ -281,14 +280,6 @@ const EnglandWalesItinerary = () => {
             <a href="#itinerary" className="border-2 border-white text-white px-8 py-3.5 rounded-md font-medium hover:bg-white/20 transition-colors">
               View Full Itinerary
             </a>
-            <a
-              href={brochurePdf}
-              download="Cornwall Wales England Brochure 2027.pdf"
-              className="flex items-center justify-center gap-2 border-2 border-white/70 text-white px-8 py-3.5 rounded-md font-medium hover:bg-white/20 transition-colors"
-            >
-              <Download size={18} aria-hidden="true" />
-              Download Brochure
-            </a>
           </div>
         </div>
       </section>
@@ -523,14 +514,6 @@ const EnglandWalesItinerary = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="mailto:tracyelder75@gmail.com" className="flex items-center justify-center gap-2 bg-primary-foreground text-primary px-6 py-3 rounded-md font-semibold text-sm hover:opacity-90 transition-opacity">
                 tracyelder75@gmail.com
-              </a>
-              <a
-                href={brochurePdf}
-                download="Cornwall Wales England Brochure 2027.pdf"
-                className="flex items-center justify-center gap-2 border-2 border-primary-foreground/70 text-primary-foreground px-6 py-3 rounded-md font-semibold text-sm hover:bg-primary-foreground/10 transition-colors"
-              >
-                <Download size={16} aria-hidden="true" />
-                Download Brochure
               </a>
             </div>
           </div>
